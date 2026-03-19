@@ -160,7 +160,7 @@ export default function Home() {
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
           <h2 className="text-xs tracking-widest uppercase mb-6 md:mb-8" style={headingStyle}>// Experience</h2>
-          <div className="divide-y" style={dividerStyle}>
+          <div className="divide-y divide-[var(--border)]">
             {experiences.map((exp, i) => (
               <div key={i} className="flex flex-col sm:grid sm:grid-cols-12 gap-2 sm:gap-6 py-6">
                 <div className="sm:col-span-3">
@@ -194,7 +194,7 @@ export default function Home() {
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
           <h2 className="text-xs tracking-widest uppercase mb-6 md:mb-8" style={headingStyle}>// Education</h2>
-          <div className="divide-y" style={dividerStyle}>
+          <div className="divide-y divide-[var(--border)]">
             {educations.map((edu, i) => (
               <div key={i} className="flex flex-col sm:grid sm:grid-cols-12 gap-2 sm:gap-6 py-6">
                 <div className="sm:col-span-3">
@@ -227,7 +227,7 @@ export default function Home() {
             <h2 className="text-xs tracking-widest uppercase" style={headingStyle}>// Recent Posts</h2>
             <Link href="/blog" className="text-xs transition-colors hover:opacity-80" style={{ color: "var(--text-secondary)" }}>view all →</Link>
           </div>
-          <div className="divide-y" style={dividerStyle}>
+          <div className="divide-y divide-[var(--border)]">
             {posts.map((post, i) => (
               <Link
                 key={i}
