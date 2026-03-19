@@ -6,7 +6,8 @@ import { posts } from "../lib/posts";
 import ProfileInfo from "@/components/ProfileInfo";
 import TechStack from "@/components/TechStack";
 import ContactForm from "@/components/ContactForm";
-import { use } from "react";
+import RecentPosts from "@/components/RecentPosts";
+import ProjectsPreview from "../components/ProjectsPreview";
 
 const experiences = [
   {
@@ -223,70 +224,16 @@ export default function Home() {
       {/* Recent Posts */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xs tracking-widest uppercase" style={headingStyle}>// Recent Posts</h2>
-            <Link href="/blog" className="text-xs transition-colors hover:opacity-80" style={{ color: "var(--text-secondary)" }}>view all →</Link>
-          </div>
-          <div className="divide-y divide-[var(--border)]">
-            {posts.map((post, i) => (
-              <Link
-                key={i}
-                href={`/blog/${post.slug}`}
-                className="group flex flex-col sm:flex-row sm:items-start sm:justify-between py-4 -mx-4 px-4 transition-colors gap-1 sm:gap-0"
-                style={{ ["--hover-bg" as string]: "var(--bg-card-hover)" }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--bg-card-hover)")}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = "transparent")}
-              >
-                <div className="flex items-start gap-4">
-                  <span className="text-[10px] mt-0.5 tabular-nums flex-shrink-0" style={{ color: "var(--text-muted)" }}>{String(i + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h3 className="text-sm transition-colors" style={{ color: "var(--text-heading)" }}>{post.title}</h3>
-                    <p className="text-xs mt-0.5" style={{ color: "var(--text-secondary)" }}>{post.excerpt}</p>
-                  </div>
-                </div>
-                <div className="text-left sm:text-right flex-shrink-0 sm:ml-8 pl-8 sm:pl-0">
-                  <p className="text-[10px] tabular-nums" style={{ color: "var(--text-secondary)" }}>{post.date}</p>
-                  <p className="text-[10px] mt-0.5" style={{ color: "var(--text-muted)" }}>{post.readTime}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <RecentPosts />
         </div>
       </section>
 
-      {/* Projects */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
-          <h2 className="text-xs tracking-widest uppercase mb-6" style={headingStyle}>// Projects</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px" style={{ backgroundColor: "var(--border)" }}>
-            {[
-              { name: "ASE Laboratory Website", desc: "Showcase website for Advanced Software Engineer Laboratory activities.", tech: "React, Tailwind CSS" },
-              { name: "UMKM Mie Aceh Website", desc: "E-commerce platform helping UMKM traders sell their products online.", tech: "MongoDB, Express.js, SCSS, Node.js" },
-              { name: "Droozle Store Website", desc: "Product display platform helping sellers showcase their items.", tech: "PHP, CodeIgniter, Bootstrap" },
-              { name: "KliniQ App Design", desc: "App design for accessing doctors, pharmacies, and health insurance easily.", tech: "Figma" },
-              { name: "Kokumi Website", desc: "Visually engaging product website for Kokumi brand.", tech: "Next.js, Tailwind CSS" },
-              { name: "Chicken William Website", desc: "Menu ordering and product showcase for Chicken William restaurant.", tech: "Next.js, Tailwind CSS, Sanity.io" },
-              { name: "E-Learning Course App", desc: "Mobile app for buying and studying online courses.", tech: "Flutter, Dart" },
-              { name: "Logbook AirNav Website", desc: "Tool quality tracking notebook for AirNav internal operations.", tech: "Next.js, Tailwind CSS, Firebase" },
-              { name: "LMS Rudi Russel", desc: "Comprehensive e-learning platform with interactive interfaces.", tech: "Next.js, Tailwind CSS, Firebase" },
-            ].map((project, i) => (
-              <div
-                key={i}
-                className="p-5 md:p-6 cursor-pointer transition-colors"
-                style={{ backgroundColor: "var(--bg-card)" }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--bg-card-hover)")}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--bg-card)")}
-              >
-                <h3 className="text-sm leading-snug mb-2" style={{ color: "var(--text-heading)" }}>{project.name}</h3>
-                <p className="text-xs leading-relaxed mb-3" style={{ color: "var(--text-secondary)" }}>{project.desc}</p>
-                <span className="text-[10px]" style={{ color: "var(--text-muted)" }}>{project.tech}</span>
-              </div>
-            ))}
-          </div>
+          <ProjectsPreview />
         </div>
       </section>
 
-      {/* Contact */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
           <ContactForm />
@@ -296,7 +243,7 @@ export default function Home() {
       {/* Footer */}
       <footer>
         <div className="max-w-5xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
-          <p className="text-[10px]" style={{ color: "var(--text-muted)" }}>© 2026 Alfito Febriansyah. Built with Next.js</p>
+          <p className="text-[10px]" style={{ color: "var(--text-muted)" }}>© 2025 Alfito Febriansyah. Built with Next.js</p>
           <div className="flex items-center gap-4">
             {[
               { name: "github", url: "https://github.com/alfitof" },

@@ -86,6 +86,52 @@ executor = AgentExecutor(agent=agent, tools=tools)</code></pre>
     `,
   },
   {
+  slug: "getting-started-with-uft-one",
+  title: "Getting Started with UFT One: Functional Testing for Enterprise Applications",
+  excerpt: "UFT One is one of the most powerful functional testing tools for enterprise-grade applications. Here's a practical introduction to getting started and what makes it stand out.",
+  date: "Mar 18, 2025",
+  readTime: "7 min read",
+  tags: ["testing", "uft", "qa"],
+  content: `
+    <p>When it comes to functional test automation for enterprise applications — think SAP, Salesforce, web apps, desktop apps, and even mainframes — <strong>UFT One</strong> (Unified Functional Testing, formerly HP QTP) remains one of the most comprehensive tools available. It's not lightweight, and it's not cheap, but in the right environment it's remarkably capable.</p>
+<br />
+    <h2>What is UFT One?</h2>
+    <p>UFT One is an automated functional testing tool developed by OpenText (formerly Micro Focus). It supports a wide range of technologies out of the box: web, mobile, desktop, SAP, Oracle, Salesforce, APIs, and more — all from a single tool. This makes it particularly valuable in enterprise environments where applications span multiple technologies.</p>
+    <p>Tests in UFT One are written in <strong>VBScript</strong>, which can feel dated compared to modern frameworks, but the object repository and keyword-driven testing model make it accessible even for non-developers.</p>
+<br />
+    <h2>Key Concepts</h2>
+    <p>Before diving in, there are a few core concepts worth understanding. The <strong>Object Repository</strong> stores all UI objects (buttons, fields, dropdowns) that your test interacts with. Think of it as a map of your application's UI elements. The <strong>Action</strong> is a reusable unit of test logic — similar to a function or method. A test is composed of one or more actions. And <strong>DataTable</strong> is UFT One's built-in data source, similar to a spreadsheet, used for data-driven testing.</p>
+<br />
+    <h2>Your First Test</h2>
+    <p>Getting started is straightforward. Once UFT One is installed and connected to your application, you can use the <strong>Record & Playback</strong> feature to generate a basic test automatically:</p>
+    <pre><code>' Example: Login test in VBScript
+Browser("MyApp").Page("Login").WebEdit("username").Set "testuser"
+Browser("MyApp").Page("Login").WebEdit("password").SetSecure "encryptedpassword"
+Browser("MyApp").Page("Login").WebButton("Login").Click
+<br />
+If Browser("MyApp").Page("Dashboard").Exist(5) Then
+  Reporter.ReportEvent micPass, "Login Test", "Login successful"
+Else
+  Reporter.ReportEvent micFail, "Login Test", "Login failed"
+End If</code></pre>
+    <p>The object hierarchy — Browser → Page → WebEdit — mirrors the structure of the application, making tests highly readable once you're familiar with the syntax.</p>
+<br />
+    <h2>Smart Identification</h2>
+    <p>One of UFT One's most powerful features is <strong>Smart Identification</strong>. When a UI object can't be found using its primary properties (because the UI changed slightly), UFT One uses a fallback set of properties to locate it. This dramatically reduces test maintenance compared to tools that rely on brittle XPath or CSS selectors alone.</p>
+<br />
+    <h2>Integrating with ALM and CI/CD</h2>
+    <p>UFT One integrates natively with <strong>ALM (Application Lifecycle Management)</strong>, also by OpenText, for test management, defect tracking, and reporting. For CI/CD integration, UFT One supports execution via command line and REST APIs, making it possible to trigger test runs from Jenkins, Azure DevOps, or any other pipeline tool.</p>
+    <pre><code>// Trigger UFT One test from Jenkins via command line
+UFTBatchRunner.exe /TestPath "C:\\Tests\\LoginTest" /ResultPath "C:\\Results"</code></pre>
+<br />
+    <h2>When to Use UFT One</h2>
+    <p>UFT One is best suited for large enterprise environments where the application under test spans multiple technologies, where a commercial support contract is required, or where integration with ALM is needed. For greenfield web or mobile projects, lighter tools like Playwright or Cypress are usually a better fit. But for legacy enterprise systems — particularly anything involving SAP or desktop applications — UFT One is often the only tool that handles them reliably.</p>
+<br />
+    <h2>Tips from the Field</h2>
+    <p>Keep your Object Repository organized from day one — a messy OR becomes unmanageable quickly. Use descriptive programming (defining objects inline rather than relying on the OR) for dynamic elements that change frequently. And invest time in understanding the <strong>Reporter</strong> object — good test reporting is what turns raw automation into actionable QA intelligence.</p>
+  `,
+  },
+  {
     slug: "nextjs-app-router-deep-dive",
     title: "Next.js App Router: A Deep Dive into the Patterns That Actually Matter",
     excerpt: "After building several production apps with the App Router, here are the patterns, pitfalls, and mental models that made the biggest difference.",
