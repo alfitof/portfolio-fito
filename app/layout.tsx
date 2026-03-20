@@ -76,6 +76,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
+        {/* DNS prefetch untuk resource eksternal */}
+        <link rel="dns-prefetch" href="https://api.resend.com" />
         {/* Favicon — Apple */}
         <link
           rel="apple-touch-icon"

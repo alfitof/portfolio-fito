@@ -156,9 +156,13 @@ export default function Home() {
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <img
-                  src="/gallery/avatar-1.jpeg"
-                  alt="Avatar"
+                  src="/gallery/avatar-1.webp"
+                  alt="Alfito Febriansyah"
                   className="w-full h-full object-cover"
+                  fetchPriority="high"
+                  decoding="async"
+                  width={96}
+                  height={96}
                 />
               </motion.div>
 

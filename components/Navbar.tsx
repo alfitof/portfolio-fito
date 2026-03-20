@@ -87,6 +87,9 @@ export default function Navbar({ active }: { active?: string }) {
             title={
               theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
             }
+            aria-label={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
           >
             {theme === "dark" ? (
               <Sun className="w-3.5 h-3.5" />
@@ -104,6 +107,9 @@ export default function Navbar({ active }: { active?: string }) {
             style={{ color: "var(--text-secondary)" }}
             whileTap={{ scale: 0.85, rotate: 20 }}
             transition={{ duration: 0.2 }}
+            aria-label={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
           >
             {theme === "dark" ? (
               <Sun className="w-4 h-4" />
@@ -117,6 +123,8 @@ export default function Navbar({ active }: { active?: string }) {
             style={{ color: "var(--text-secondary)" }}
             onClick={() => setOpen(!open)}
             whileTap={{ scale: 0.85 }}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
           >
             <AnimatePresence mode="wait">
               {open ? (

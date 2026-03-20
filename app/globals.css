@@ -13,18 +13,19 @@ html {
 }
 
 /* ── Dark mode (default) ── */
-:root, [data-theme="dark"] {
+:root,
+[data-theme="dark"] {
   --bg: #0a0a0a;
   --bg-card: #0a0a0a;
-  --bg-card-hover: rgba(39,39,42,0.6);
-  --bg-input: rgba(24,24,27,0.6);
-  --border: rgba(63,63,70,0.6);
+  --bg-card-hover: rgba(39, 39, 42, 0.6);
+  --bg-input: rgba(24, 24, 27, 0.6);
+  --border: rgba(63, 63, 70, 0.6);
   --border-input: #27272a;
   --text-primary: #e4e4e7;
-  --text-secondary: #71717a;
-  --text-muted: #3f3f46;
+  --text-secondary: #a1a1aa; /* naik dari #71717a → lebih readable */
+  --text-muted: #71717a; /* naik dari #3f3f46 → lebih readable */
   --text-heading: #ffffff;
-  --nav-bg: rgba(10,10,10,0.8);
+  --nav-bg: rgba(10, 10, 10, 0.8);
   --scrollbar-thumb: #27272a;
   --scrollbar-thumb-hover: #3f3f46;
 }
@@ -33,15 +34,15 @@ html {
 [data-theme="light"] {
   --bg: #fafafa;
   --bg-card: #ffffff;
-  --bg-card-hover: rgba(244,244,245,0.8);
-  --bg-input: rgba(244,244,245,0.8);
-  --border: rgba(228,228,231,0.8);
+  --bg-card-hover: rgba(244, 244, 245, 0.8);
+  --bg-input: rgba(244, 244, 245, 0.8);
+  --border: rgba(228, 228, 231, 0.8);
   --border-input: #d4d4d8;
   --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --text-muted: #a1a1aa;
+  --text-secondary: #3f3f46; /* turun dari #52525b → lebih gelap = lebih kontras */
+  --text-muted: #52525b; /* turun dari #a1a1aa → lebih gelap = lebih kontras */
   --text-heading: #09090b;
-  --nav-bg: rgba(250,250,250,0.85);
+  --nav-bg: rgba(250, 250, 250, 0.85);
   --scrollbar-thumb: #d4d4d8;
   --scrollbar-thumb-hover: #a1a1aa;
 }
@@ -50,13 +51,23 @@ body {
   background-color: var(--bg);
   color: var(--text-primary);
   font-family: var(--font-geist-mono), monospace;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); }
-::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
 
 ::selection {
   background: rgba(59, 130, 246, 0.3);
