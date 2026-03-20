@@ -1,21 +1,25 @@
-const CACHE_NAME = "alfito-portfolio-v1";
-const STATIC_ASSETS = [
+const CACHE_NAME = "alfito-portfolio-v2";
+
+const PRECACHE_ASSETS = [
   "/",
   "/blog",
   "/projects",
   "/gallery/avatar-1.webp",
   "/manifest.json",
+  "/offline.html",
 ];
 
-// Install — cache static assets
+// Install — pre-cache semua halaman penting
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS)),
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(PRECACHE_ASSETS);
+    }),
   );
   self.skipWaiting();
 });
 
-// Activate — clean old caches
+// Activate — hapus cache lama
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches
@@ -31,20 +35,52 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Fetch — network first, fallback to cache
+// Fetch strategy:
+// - HTML pages → network first, fallback cache, fallback offline.html
+// - Assets (img, css, js) → cache first, fallback network
+// - API → network only
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
-  if (event.request.url.includes("/api/")) return;
 
+  const url = new URL(event.request.url);
+
+  // Skip API calls
+  if (url.pathname.startsWith("/api/")) return;
+
+  // HTML navigation requests → network first
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          // Cache the fresh response
+          const clone = response.clone();
+          caches
+            .open(CACHE_NAME)
+            .then((cache) => cache.put(event.request, clone));
+          return response;
+        })
+        .catch(() =>
+          // Try cache first
+          caches
+            .match(event.request)
+            .then((cached) => cached || caches.match("/offline.html")),
+        ),
+    );
+    return;
+  }
+
+  // Static assets → cache first
   event.respondWith(
-    fetch(event.request)
-      .then((response) => {
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+
+      return fetch(event.request).then((response) => {
         const clone = response.clone();
         caches
           .open(CACHE_NAME)
           .then((cache) => cache.put(event.request, clone));
         return response;
-      })
-      .catch(() => caches.match(event.request)),
+      });
+    }),
   );
 });
