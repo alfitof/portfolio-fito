@@ -161,8 +161,9 @@ export default function Home() {
                   className="w-full h-full object-cover"
                   fetchPriority="high"
                   decoding="async"
-                  width={96}
-                  height={96}
+                  width={137}
+                  height={137}
+                  sizes="137px"
                 />
               </motion.div>
 

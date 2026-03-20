@@ -102,15 +102,15 @@ export default function PostPage({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="prose prose-sm max-w-none
-            prose-p:leading-[1.8] prose-p:mb-5
-            prose-h2:text-base prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-4
-            prose-h3:text-sm prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
-            prose-code:text-blue-400 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:font-mono
-            prose-pre:border prose-pre:rounded-none prose-pre:my-6
-            prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
-            prose-blockquote:pl-4 prose-blockquote:my-6
-            prose-li:leading-relaxed prose-li:mb-1
-            prose-ul:my-4 prose-ol:my-4"
+  prose-p:leading-[1.8] prose-p:mb-5
+  prose-h2:text-base prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-4
+  prose-h3:text-sm prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
+  prose-code:text-blue-400 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:font-mono prose-code:break-words
+  prose-pre:border prose-pre:rounded-none prose-pre:my-6
+  prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+  prose-blockquote:pl-4 prose-blockquote:my-6
+  prose-li:leading-relaxed prose-li:mb-1
+  prose-ul:my-4 prose-ol:my-4"
           style={
             {
               ["--tw-prose-body" as string]: "var(--text-secondary)",

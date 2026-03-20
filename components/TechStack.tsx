@@ -89,6 +89,9 @@ const techStack = [
           <img
             src="/icons/ant-icon.svg"
             alt="Ant Design"
+            width={20}
+            height={20}
+            loading="lazy"
             className="w-5 h-5 object-contain"
           />
         ),
@@ -155,6 +158,9 @@ const techStack = [
           <img
             src="/icons/uft-icon.png"
             alt="UFT One"
+            width={20}
+            height={20}
+            loading="lazy"
             className="w-5 h-5 object-contain"
           />
         ),
@@ -164,8 +170,11 @@ const techStack = [
         name: "TestNG",
         icon: (
           <img
-            src="/icons/testng-icon.png"
+            src="/icons/testng-icon.webp"
             alt="TestNG"
+            width={20}
+            height={20}
+            loading="lazy"
             className="w-5 h-5 object-contain"
           />
         ),
@@ -204,6 +213,9 @@ const techStack = [
           <img
             src="/icons/jenkins-icon.png"
             alt="Jenkins"
+            width={20}
+            height={20}
+            loading="lazy"
             className="w-5 h-5 object-contain"
           />
         ),
@@ -227,6 +239,9 @@ const techStack = [
           <img
             src="/icons/figma-icon.png"
             alt="Figma"
+            width={20}
+            height={20}
+            loading="lazy"
             className="w-5 h-5 object-contain"
           />
         ),
@@ -249,6 +264,9 @@ const techStack = [
           <img
             src="/icons/dbeaver-icon.png"
             alt="DBeaver"
+            width={20}
+            height={20}
+            loading="lazy"
             className="w-5 h-5 object-contain"
           />
         ),
@@ -260,6 +278,9 @@ const techStack = [
           <img
             src="/icons/gcp-icon.png"
             alt="Cloud Data Fusion"
+            width={20}
+            height={20}
+            loading="lazy"
             className="w-5 h-5 object-contain"
           />
         ),
@@ -298,6 +319,9 @@ const techStack = [
           <img
             src="/icons/openclaw-icon.png"
             alt="OpenClaw"
+            width={20}
+            height={20}
+            loading="lazy"
             className="w-5 h-5 object-contain"
           />
         ),
@@ -332,10 +356,13 @@ function TechGroup({ group }: { group: (typeof techStack)[0] }) {
               <img
                 src={
                   theme === "light"
-                    ? "/icons/testng-icon-light.png"
-                    : "/icons/testng-icon.png"
+                    ? "/icons/testng-icon-light.webp"
+                    : "/icons/testng-icon.webp"
                 }
                 alt="TestNG"
+                width={20}
+                height={20}
+                loading="lazy"
                 className="w-5 h-5 object-contain"
               />
             );
@@ -391,10 +418,13 @@ function TechGroup({ group }: { group: (typeof techStack)[0] }) {
                       <img
                         src={
                           theme === "light"
-                            ? "/icons/testng-light-icon.png"
-                            : "/icons/testng-icon.png"
+                            ? "/icons/testng-icon-light.webp"
+                            : "/icons/testng-icon.webp"
                         }
                         alt="TestNG"
+                        width={20}
+                        height={20}
+                        loading="lazy"
                         className="w-5 h-5 object-contain"
                       />
                     );
