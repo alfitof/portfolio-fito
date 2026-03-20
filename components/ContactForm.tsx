@@ -111,13 +111,13 @@ export default function ContactForm() {
                 style={{ color: "var(--text-muted)" }}
               />
               <a
-                href="https://linkedin.com/in/alfito-fbriansyah"
+                href="https://linkedin.com/in/alfito-febriansyah"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs transition-colors hover:text-blue-400 truncate"
                 style={{ color: "var(--text-secondary)" }}
               >
-                linkedin.com/in/alfito-fbriansyah
+                linkedin.com/in/alfito-febriansyah
               </a>
             </div>
           </div>

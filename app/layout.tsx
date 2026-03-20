@@ -179,7 +179,7 @@ export default function RootLayout({
               },
               sameAs: [
                 "https://github.com/alfitof",
-                "https://linkedin.com/in/alfito-fbriansyah",
+                "https://linkedin.com/in/alfito-febriansyah",
               ],
               knowsAbout: [
                 "Software Engineering",

@@ -442,7 +442,7 @@ export default function Home() {
               { name: "github", url: "https://github.com/alfitof" },
               {
                 name: "linkedin",
-                url: "https://linkedin.com/in/alfito-fbriansyah",
+                url: "https://linkedin.com/in/alfito-febriansyah",
               },
             ].map((s) => (
               <motion.a
