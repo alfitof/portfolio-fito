@@ -1,13 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
-import SpotifyNowPlaying from "@/components/SpotifyNowPlaying";
 import ProfileInfo from "@/components/ProfileInfo";
 import TechStack from "@/components/TechStack";
 import ContactForm from "@/components/ContactForm";
 import RecentPosts from "@/components/RecentPosts";
 import ProjectsPreview from "../components/ProjectsPreview";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  PageEntrance,
+} from "@/components/AnimateIn";
+import { HoverRow } from "@/components/AnimatedCard";
 
 const experiences = [
   {
@@ -127,7 +134,6 @@ const sectionClass = "border-b";
 const sectionStyle = { borderColor: "var(--border)" };
 const innerClass = "max-w-5xl mx-auto px-6 py-10 md:py-14";
 const headingStyle = { color: "var(--text-secondary)" };
-const dividerStyle = { borderColor: "var(--border)" };
 
 export default function Home() {
   return (
@@ -140,20 +146,36 @@ export default function Home() {
       {/* Profile */}
       <section className={sectionClass} style={sectionStyle}>
         <div className="max-w-5xl mx-auto px-6 pt-24 pb-12 md:pt-28 md:pb-16">
-          <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
-            <div
-              className="w-20 h-20 md:w-24 md:h-24 rounded-full flex-shrink-0 overflow-hidden"
-              style={{ border: "1px solid var(--border)" }}
-            >
-              <img
-                src="/gallery/avatar-1.jpeg"
-                alt="Avatar"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-1">
-                <h1 className="text-xl md:text-2xl font-bold tracking-tight flex items-center gap-2 flex-wrap">
+          <PageEntrance>
+            <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
+              <motion.div
+                className="w-20 h-20 md:w-24 md:h-24 rounded-full flex-shrink-0 overflow-hidden"
+                style={{ border: "1px solid var(--border)" }}
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <img
+                  src="/gallery/avatar-1.jpeg"
+                  alt="Avatar"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+              <motion.div
+                className="flex-1 min-w-0"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                <h1
+                  className="text-xl md:text-2xl font-bold tracking-tight flex items-center gap-2 mb-1 flex-wrap"
+                  style={{ color: "var(--text-heading)" }}
+                >
                   Alfito Febriansyah
                   <svg
                     className="w-[1.1rem] h-[1.1rem] text-blue-400 flex-shrink-0"
@@ -170,223 +192,242 @@ export default function Home() {
                     />
                   </svg>
                 </h1>
-                <SpotifyNowPlaying />
-              </div>
-              <div className="flex items-center gap-2 mb-2 flex-wrap">
-                <span
-                  className="text-[10px] uppercase tracking-widest px-1.5 py-0.5"
-                  style={{
-                    color: "var(--text-muted)",
-                    border: "1px solid var(--border)",
-                  }}
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <span
+                    className="text-[10px] uppercase tracking-widest px-1.5 py-0.5"
+                    style={{
+                      color: "var(--text-muted)",
+                      border: "1px solid var(--border)",
+                    }}
+                  >
+                    Software Engineer
+                  </span>
+                  <span
+                    className="text-[10px] uppercase tracking-widest px-1.5 py-0.5"
+                    style={{
+                      color: "var(--text-muted)",
+                      border: "1px solid var(--border)",
+                    }}
+                  >
+                    Quality Assurance
+                  </span>
+                </div>
+                <p
+                  className="text-sm mb-6"
+                  style={{ color: "var(--text-secondary)" }}
                 >
-                  Software Engineer
-                </span>
-                <span
-                  className="text-[10px] uppercase tracking-widest px-1.5 py-0.5"
-                  style={{
-                    color: "var(--text-muted)",
-                    border: "1px solid var(--border)",
-                  }}
-                >
-                  Quality Assurance
-                </span>
-              </div>
-              <p
-                className="text-sm mb-6"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                Creating with code. Small details matter.
-              </p>
-              <ProfileInfo />
+                  Creating with code.{" "}
+                  <span className="text-blue-400">Small details matter.</span>
+                </p>
+                <ProfileInfo />
+              </motion.div>
             </div>
-          </div>
+          </PageEntrance>
         </div>
       </section>
 
       {/* Tech Stack */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
-          <h2
-            className="text-xs tracking-widest uppercase mb-6 md:mb-8"
-            style={headingStyle}
-          >
-            // Tech Stack
-          </h2>
-          <TechStack />
+          <FadeIn>
+            <h2
+              className="text-xs tracking-widest uppercase mb-6 md:mb-8"
+              style={headingStyle}
+            >
+              // Tech Stack
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <TechStack />
+          </FadeIn>
         </div>
       </section>
 
       {/* Experience */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
-          <h2
-            className="text-xs tracking-widest uppercase mb-6 md:mb-8"
-            style={headingStyle}
-          >
-            // Experience
-          </h2>
-          <div className="divide-y divide-[var(--border)]">
+          <FadeIn>
+            <h2
+              className="text-xs tracking-widest uppercase mb-6 md:mb-8"
+              style={headingStyle}
+            >
+              // Experience
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="divide-y divide-[var(--border)]">
             {experiences.map((exp, i) => (
-              <div
-                key={i}
-                className="flex flex-col sm:grid sm:grid-cols-12 gap-2 sm:gap-6 py-6"
-              >
-                <div className="sm:col-span-3">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <p
-                      className="text-[10px] tabular-nums"
-                      style={{ color: "var(--text-secondary)" }}
-                    >
-                      {exp.period}
-                    </p>
-                    <span
-                      className="text-[10px] tabular-nums px-1.5 py-0.5"
-                      style={{
-                        color: "var(--text-muted)",
-                        border: "1px solid var(--border)",
-                      }}
-                    >
-                      {calcDuration(exp.period)}
-                    </span>
-                  </div>
-                  <p
-                    className="text-[10px] mt-1"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {exp.location}
-                  </p>
-                </div>
-                <div className="sm:col-span-9">
-                  <h3
-                    className="text-sm font-semibold mb-0.5"
-                    style={{ color: "var(--text-heading)" }}
-                  >
-                    {exp.role}
-                  </h3>
-                  <p
-                    className="text-xs mb-3"
-                    style={{ color: "var(--text-secondary)" }}
-                  >
-                    @ {exp.company}
-                  </p>
-                  <ul className="space-y-1.5">
-                    {exp.points.map((point, j) => (
-                      <li
-                        key={j}
-                        className="flex items-start gap-2 text-xs leading-relaxed"
+              <StaggerItem key={i}>
+                <div className="flex flex-col sm:grid sm:grid-cols-12 gap-2 sm:gap-6 py-6">
+                  <div className="sm:col-span-3">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p
+                        className="text-[10px] tabular-nums"
                         style={{ color: "var(--text-secondary)" }}
                       >
-                        <span
-                          className="flex-shrink-0"
-                          style={{ color: "var(--text-muted)" }}
+                        {exp.period}
+                      </p>
+                      <span
+                        className="text-[10px] tabular-nums px-1.5 py-0.5"
+                        style={{
+                          color: "var(--text-muted)",
+                          border: "1px solid var(--border)",
+                        }}
+                      >
+                        {calcDuration(exp.period)}
+                      </span>
+                    </div>
+                    <p
+                      className="text-[10px] mt-1"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      {exp.location}
+                    </p>
+                  </div>
+                  <div className="sm:col-span-9">
+                    <h3
+                      className="text-sm font-semibold mb-0.5"
+                      style={{ color: "var(--text-heading)" }}
+                    >
+                      {exp.role}
+                    </h3>
+                    <p
+                      className="text-xs mb-3"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
+                      @ {exp.company}
+                    </p>
+                    <ul className="space-y-1.5">
+                      {exp.points.map((point, j) => (
+                        <li
+                          key={j}
+                          className="flex items-start gap-2 text-xs leading-relaxed"
+                          style={{ color: "var(--text-secondary)" }}
                         >
-                          —
-                        </span>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+                          <span
+                            className="flex-shrink-0"
+                            style={{ color: "var(--text-muted)" }}
+                          >
+                            —
+                          </span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Education */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
-          <h2
-            className="text-xs tracking-widest uppercase mb-6 md:mb-8"
-            style={headingStyle}
-          >
-            // Education
-          </h2>
-          <div className="divide-y divide-[var(--border)]">
+          <FadeIn>
+            <h2
+              className="text-xs tracking-widest uppercase mb-6 md:mb-8"
+              style={headingStyle}
+            >
+              // Education
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="divide-y divide-[var(--border)]">
             {educations.map((edu, i) => (
-              <div
-                key={i}
-                className="flex flex-col sm:grid sm:grid-cols-12 gap-2 sm:gap-6 py-6"
-              >
-                <div className="sm:col-span-3">
-                  <p
-                    className="text-[10px] tabular-nums"
-                    style={{ color: "var(--text-secondary)" }}
-                  >
-                    {edu.period}
-                  </p>
-                  <p
-                    className="text-[10px] mt-1"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {edu.location}
-                  </p>
-                </div>
-                <div className="sm:col-span-9">
-                  <h3
-                    className="text-sm font-semibold mb-0.5"
-                    style={{ color: "var(--text-heading)" }}
-                  >
-                    {edu.degree}
-                  </h3>
-                  <p
-                    className="text-xs mb-1"
-                    style={{ color: "var(--text-secondary)" }}
-                  >
-                    @ {edu.school}
-                  </p>
-                  <p
-                    className="text-[10px] mb-3"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    GPA {edu.gpa}
-                  </p>
-                  <ul className="space-y-1.5">
-                    {edu.points.map((point, j) => (
-                      <li
-                        key={j}
-                        className="flex items-start gap-2 text-xs leading-relaxed"
-                        style={{ color: "var(--text-secondary)" }}
-                      >
-                        <span
-                          className="flex-shrink-0"
-                          style={{ color: "var(--text-muted)" }}
+              <StaggerItem key={i}>
+                <div className="flex flex-col sm:grid sm:grid-cols-12 gap-2 sm:gap-6 py-6">
+                  <div className="sm:col-span-3">
+                    <p
+                      className="text-[10px] tabular-nums"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
+                      {edu.period}
+                    </p>
+                    <p
+                      className="text-[10px] mt-1"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      {edu.location}
+                    </p>
+                  </div>
+                  <div className="sm:col-span-9">
+                    <h3
+                      className="text-sm font-semibold mb-0.5"
+                      style={{ color: "var(--text-heading)" }}
+                    >
+                      {edu.degree}
+                    </h3>
+                    <p
+                      className="text-xs mb-1"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
+                      @ {edu.school}
+                    </p>
+                    <p
+                      className="text-[10px] mb-3"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      GPA {edu.gpa}
+                    </p>
+                    <ul className="space-y-1.5">
+                      {edu.points.map((point, j) => (
+                        <li
+                          key={j}
+                          className="flex items-start gap-2 text-xs leading-relaxed"
+                          style={{ color: "var(--text-secondary)" }}
                         >
-                          —
-                        </span>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+                          <span
+                            className="flex-shrink-0"
+                            style={{ color: "var(--text-muted)" }}
+                          >
+                            —
+                          </span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Recent Posts */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
-          <RecentPosts />
+          <FadeIn>
+            <RecentPosts />
+          </FadeIn>
         </div>
       </section>
 
+      {/* Projects */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
-          <ProjectsPreview />
+          <FadeIn>
+            <ProjectsPreview />
+          </FadeIn>
         </div>
       </section>
 
+      {/* Contact */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
-          <ContactForm />
+          <FadeIn>
+            <ContactForm />
+          </FadeIn>
         </div>
       </section>
 
       {/* Footer */}
-      <footer>
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="max-w-5xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
           <p className="text-[10px]" style={{ color: "var(--text-muted)" }}>
             © 2025 Alfito Febriansyah. Built with Next.js
@@ -399,20 +440,21 @@ export default function Home() {
                 url: "https://linkedin.com/in/alfito-fbriansyah",
               },
             ].map((s) => (
-              <a
+              <motion.a
                 key={s.name}
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[10px] uppercase tracking-widest transition-colors hover:opacity-80"
+                className="text-[10px] uppercase tracking-widest transition-colors"
                 style={{ color: "var(--text-muted)" }}
+                whileHover={{ opacity: 0.6 }}
               >
                 {s.name}
-              </a>
+              </motion.a>
             ))}
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </main>
   );
 }
