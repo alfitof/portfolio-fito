@@ -50,14 +50,6 @@ export const projects: Project[] = [
     link: "https://chickenwilliam.alfitofebriansyah.blog/",
   },
   {
-    name: "Portfolio Website",
-    desc: "Personal portfolio to showcase work and professional background.",
-    tech: ["Next.js", "Bootstrap"],
-    category: "Web",
-    year: "2023",
-    link: "#",
-  },
-  {
     name: "Kokumi Website",
     desc: "Visually engaging product website for Kokumi brand.",
     tech: ["Next.js", "Tailwind CSS"],
