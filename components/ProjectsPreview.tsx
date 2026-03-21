@@ -2,86 +2,33 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { projects } from "../lib/projects";
 
 const PREVIEW_COUNT_DESKTOP = 6;
 const PREVIEW_COUNT_MOBILE = 3;
 
-const allProjects = [
-  {
-    name: "Temu Jiwa",
-    desc: "Platform for selling customizable digital invitations.",
-    tech: "Next.js, Tailwind CSS, Radix UI, Firebase, GSAP, Framer Motion, Cloudinary",
-    link: "https://temujiwa.alfitofebriansyah.blog/",
-  },
-  {
-    name: "ASE Laboratory Website",
-    desc: "Showcase website for Advanced Software Engineer Laboratory activities.",
-    tech: "React, Tailwind CSS",
-    link: "#",
-  },
-  {
-    name: "UMKM Mie Aceh Website",
-    desc: "E-commerce platform helping UMKM traders sell their products online.",
-    tech: "MongoDB, Express.js, SCSS, Node.js",
-    link: "#",
-  },
-  {
-    name: "Droozle Store Website",
-    desc: "Product display platform helping sellers showcase their items.",
-    tech: "PHP, CodeIgniter, Bootstrap",
-    link: "#",
-  },
-  {
-    name: "KliniQ App Design",
-    desc: "App design for accessing doctors, pharmacies, and health insurance easily.",
-    tech: "Figma",
-    link: "#",
-  },
-  {
-    name: "Kokumi Website",
-    desc: "Visually engaging product website for Kokumi brand.",
-    tech: "Next.js, Tailwind CSS",
-    link: "#",
-  },
-  {
-    name: "Chicken William Website",
-    desc: "Menu ordering and product showcase for Chicken William restaurant.",
-    tech: "Next.js, Tailwind CSS, Sanity.io",
-    link: "#",
-  },
-  {
-    name: "E-Learning Course App",
-    desc: "Mobile app for buying and studying online courses.",
-    tech: "Flutter, Dart",
-    link: "#",
-  },
-  {
-    name: "Logbook AirNav Website",
-    desc: "Tool quality tracking notebook for AirNav internal operations.",
-    tech: "Next.js, Tailwind CSS, Firebase",
-    link: "#",
-  },
-  {
-    name: "LMS Rudi Russel",
-    desc: "Comprehensive e-learning platform with interactive interfaces.",
-    tech: "Next.js, Tailwind CSS, Firebase",
-    link: "#",
-  },
-];
-
 export default function ProjectsPreview() {
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const check = () => setIsMobile(window.innerWidth < 640);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  const previewCount = isMobile ? PREVIEW_COUNT_MOBILE : PREVIEW_COUNT_DESKTOP;
-  const preview = allProjects.slice(0, previewCount);
-  const remaining = allProjects.length - previewCount;
+  // Pakai desktop count sebagai default sebelum mount
+  // supaya tidak hydration mismatch
+  const previewCount = mounted
+    ? isMobile
+      ? PREVIEW_COUNT_MOBILE
+      : PREVIEW_COUNT_DESKTOP
+    : PREVIEW_COUNT_DESKTOP;
+
+  const preview = projects.slice(0, previewCount);
+  const remaining = projects.length - previewCount;
 
   return (
     <div>
@@ -107,8 +54,7 @@ export default function ProjectsPreview() {
             }
           >
             <div
-              key={i}
-              className="p-5 md:p-6 cursor-pointer transition-colors"
+              className="p-5 md:p-6 h-full transition-colors"
               style={{ backgroundColor: "var(--bg-card)" }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.backgroundColor = "var(--bg-card-hover)")
@@ -117,12 +63,22 @@ export default function ProjectsPreview() {
                 (e.currentTarget.style.backgroundColor = "var(--bg-card)")
               }
             >
-              <h3
-                className="text-sm leading-snug mb-2"
-                style={{ color: "var(--text-heading)" }}
-              >
-                {project.name}
-              </h3>
+              <div className="flex items-center gap-1.5 mb-2">
+                <h3
+                  className="text-sm leading-snug"
+                  style={{ color: "var(--text-heading)" }}
+                >
+                  {project.name}
+                </h3>
+                {project.link !== "#" && (
+                  <span
+                    className="text-[10px]"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    ↗
+                  </span>
+                )}
+              </div>
               <p
                 className="text-xs leading-relaxed mb-3 line-clamp-2"
                 style={{ color: "var(--text-secondary)" }}
@@ -133,16 +89,15 @@ export default function ProjectsPreview() {
                 className="text-[10px] line-clamp-1 block"
                 style={{ color: "var(--text-muted)" }}
               >
-                {project.tech}
+                {project.tech.join(", ")}
               </span>
             </div>
           </Link>
         ))}
 
-        {/* More card */}
         {remaining > 0 && (
           <div
-            className="col-span-1 sm:col-span-2 md:col-span-3 pt-2"
+            className="col-span-1 sm:col-span-2 md:col-span-3"
             style={{ backgroundColor: "var(--bg)" }}
           >
             <div className="flex justify-center pt-4 pb-2">
@@ -155,7 +110,7 @@ export default function ProjectsPreview() {
                   padding: "0.4rem 1rem",
                 }}
               >
-                View all {allProjects.length} projects →
+                View all {projects.length} projects →
               </Link>
             </div>
           </div>

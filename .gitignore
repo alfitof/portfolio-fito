@@ -19,6 +19,7 @@
 
 # production
 /build
+/certificates
 
 # misc
 .DS_Store

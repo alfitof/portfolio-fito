@@ -1,0 +1,124 @@
+export interface Project {
+  name: string;
+  desc: string;
+  tech: string[];
+  category: string;
+  year: string;
+  link: string;
+}
+
+export const projects: Project[] = [
+  {
+    name: "Book Your Cut",
+    desc: "SaaS platform for managing barber bookings, schedules, and customer appointments.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    category: "Web",
+    year: "2026",
+    link: "https://bookyourcut.alfitofebriansyah.blog/",
+  },
+  {
+    name: "Temu Jiwa",
+    desc: "Platform for selling customizable digital invitations.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Radix UI",
+      "Firebase",
+      "GSAP",
+      "Framer Motion",
+      "Cloudinary",
+    ],
+    category: "Web",
+    year: "2025",
+    link: "https://temujiwa.alfitofebriansyah.blog/",
+  },
+  {
+    name: "Chicken William",
+    desc: "Menu ordering and product showcase for Chicken William restaurant.",
+    tech: ["Next.js", "TypeScript", "Next Auth", "Tailwind CSS", "Sanity.io"],
+    category: "Web",
+    year: "2023",
+    link: "https://chickenwilliam.alfitofebriansyah.blog/",
+  },
+  {
+    name: "Portfolio Website",
+    desc: "Personal portfolio to showcase work and professional background.",
+    tech: ["Next.js", "Bootstrap"],
+    category: "Web",
+    year: "2023",
+    link: "#",
+  },
+  {
+    name: "Kokumi Website",
+    desc: "Visually engaging product website for Kokumi brand.",
+    tech: ["Next.js", "Tailwind CSS"],
+    category: "Web",
+    year: "2023",
+    link: "#",
+  },
+  {
+    name: "E-Learning Course App",
+    desc: "Mobile app for buying and studying online courses.",
+    tech: ["Flutter", "Dart"],
+    category: "Mobile",
+    year: "2023",
+    link: "#",
+  },
+  {
+    name: "Rudi Russel Profile",
+    desc: "Company profile website introducing Rudi Russell to the public.",
+    tech: ["Next.js", "Tailwind CSS"],
+    category: "Web",
+    year: "2023",
+    link: "#",
+  },
+  {
+    name: "Logbook AirNav Website",
+    desc: "Tool quality tracking notebook for AirNav internal operations.",
+    tech: ["Next.js", "Tailwind CSS", "Firebase"],
+    category: "Web",
+    year: "2023",
+    link: "#",
+  },
+  {
+    name: "LMS Rudi Russel",
+    desc: "Comprehensive e-learning platform with interactive interfaces.",
+    tech: ["Next.js", "Tailwind CSS", "Firebase"],
+    category: "Web",
+    year: "2023",
+    link: "#",
+  },
+  {
+    name: "ASE Laboratory Website",
+    desc: "Showcase website for Advanced Software Engineer Laboratory activities.",
+    tech: ["React", "Tailwind CSS"],
+    category: "Web",
+    year: "2022",
+    link: "#",
+  },
+  {
+    name: "UMKM Mie Aceh Website",
+    desc: "E-commerce platform helping UMKM traders sell their products online.",
+    tech: ["MongoDB", "Express.js", "SCSS", "Node.js"],
+    category: "Web",
+    year: "2022",
+    link: "#",
+  },
+  {
+    name: "Droozle Store Website",
+    desc: "Product display platform helping sellers showcase their items.",
+    tech: ["PHP", "CodeIgniter", "Bootstrap"],
+    category: "Web",
+    year: "2022",
+    link: "#",
+  },
+  {
+    name: "KliniQ App Design",
+    desc: "App design for accessing doctors, pharmacies, and health insurance easily.",
+    tech: ["Figma"],
+    category: "Design",
+    year: "2022",
+    link: "#",
+  },
+];
