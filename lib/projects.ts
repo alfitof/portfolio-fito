@@ -50,12 +50,12 @@ export const projects: Project[] = [
     link: "https://chickenwilliam.alfitofebriansyah.blog/",
   },
   {
-    name: "Kokumi Website",
+    name: "Kokumi Drink",
     desc: "Visually engaging product website for Kokumi brand.",
-    tech: ["Next.js", "Tailwind CSS"],
+    tech: ["Next.js", "Tailwind CSS", "Headless UI", "RainbowKit"],
     category: "Web",
     year: "2023",
-    link: "#",
+    link: "https://kokumidrink.alfitofebriansyah.blog/",
   },
   {
     name: "E-Learning Course App",
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     tech: ["Flutter", "Dart"],
     category: "Mobile",
     year: "2023",
-    link: "#",
+    link: "https://github.com/alfitof/aplikasi-elearning-kelompok2",
   },
   {
     name: "Rudi Russel Profile",
