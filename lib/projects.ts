@@ -17,6 +17,14 @@ export const projects: Project[] = [
     link: "https://bookyourcut.alfitofebriansyah.blog/",
   },
   {
+    name: "The Doors Game",
+    desc: "Interactive game inspired by the stardew valley.",
+    tech: ["HTML Canvas", "CSS", "Aseprite"],
+    category: "Web",
+    year: "2025",
+    link: "https://thedoors.alfitofebriansyah.blog/",
+  },
+  {
     name: "Temu Jiwa",
     desc: "Platform for selling customizable digital invitations.",
     tech: [

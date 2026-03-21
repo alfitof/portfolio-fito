@@ -1,34 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { projects } from "../lib/projects";
+import { projects } from "@/lib/projects";
 
-const PREVIEW_COUNT_DESKTOP = 6;
-const PREVIEW_COUNT_MOBILE = 3;
+const PREVIEW_COUNT = 6;
 
 export default function ProjectsPreview() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const check = () => setIsMobile(window.innerWidth < 640);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  // Pakai desktop count sebagai default sebelum mount
-  // supaya tidak hydration mismatch
-  const previewCount = mounted
-    ? isMobile
-      ? PREVIEW_COUNT_MOBILE
-      : PREVIEW_COUNT_DESKTOP
-    : PREVIEW_COUNT_DESKTOP;
-
-  const preview = projects.slice(0, previewCount);
-  const remaining = projects.length - previewCount;
+  const preview = projects.slice(0, PREVIEW_COUNT);
+  const remaining = projects.length - PREVIEW_COUNT;
 
   return (
     <div>
@@ -45,7 +24,7 @@ export default function ProjectsPreview() {
       >
         {preview.map((project, i) => (
           <Link
-            key={i}
+            key={project.name}
             href={project.link}
             target={project.link !== "#" ? "_blank" : undefined}
             rel={project.link !== "#" ? "noopener noreferrer" : undefined}
