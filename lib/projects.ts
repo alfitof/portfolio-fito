@@ -17,6 +17,14 @@ export const projects: Project[] = [
     link: "https://bookyourcut.alfitofebriansyah.blog/",
   },
   {
+    name: "Bagi Bareng",
+    desc: "SaaS platform to split bills by scanning receipts and auto-calculating shares.",
+    tech: ["Next.js", "TypeScript", "Ant Design", "Tesseract.js"],
+    category: "Web",
+    year: "2026",
+    link: "https://bagibareng.alfitofebriansyah.blog/",
+  },
+  {
     name: "The Doors Game",
     desc: "Interactive game inspired by the stardew valley.",
     tech: ["HTML Canvas", "CSS", "Aseprite"],
