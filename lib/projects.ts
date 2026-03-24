@@ -25,6 +25,14 @@ export const projects: Project[] = [
     link: "https://bagibareng.alfitofebriansyah.blog/",
   },
   {
+    name: "Calculator",
+    desc: "A funny calculator that refuses to give instant answers—because even math needs patience.",
+    tech: ["Next.js", "TypeScript", "Pure CSS"],
+    category: "Web",
+    year: "2026",
+    link: "https://calculator.alfitofebriansyah.blog/",
+  },
+  {
     name: "The Doors Game",
     desc: "Interactive game inspired by the stardew valley.",
     tech: ["HTML Canvas", "CSS", "Aseprite"],
