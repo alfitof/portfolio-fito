@@ -41,7 +41,7 @@ export default function ProfileInfo() {
     },
     {
       icon: <Lightbulb className={iconClass} style={iconStyle} />,
-      label: "Aspiring AI Agent Developer",
+      label: "Aspiring AI Automation Engineer",
     },
     {
       icon: <Mail className={iconClass} style={iconStyle} />,
