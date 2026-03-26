@@ -28,6 +28,7 @@ import {
   SiInsomnia,
   SiJira,
   SiMongodb,
+  SiClaude,
 } from "react-icons/si";
 import { DiIllustrator, DiPhotoshop } from "react-icons/di";
 import { VscVscode } from "react-icons/vsc";
@@ -167,6 +168,20 @@ const techStack = [
         color: "",
       },
       {
+        name: "Katalon",
+        icon: (
+          <img
+            src="/icons/katalon-icon.svg"
+            alt="Katalon"
+            width={20}
+            height={20}
+            loading="lazy"
+            className="w-5 h-5 object-contain"
+          />
+        ),
+        color: "",
+      },
+      {
         name: "TestNG",
         icon: (
           <img
@@ -184,6 +199,20 @@ const techStack = [
         name: "Jest",
         icon: <SiJest className="w-5 h-5" />,
         color: "text-[#C21325]",
+      },
+      {
+        name: "Playwright",
+        icon: (
+          <img
+            src="/icons/playwright-icon.svg"
+            alt="Playwright"
+            width={20}
+            height={20}
+            loading="lazy"
+            className="w-5 h-5 object-contain"
+          />
+        ),
+        color: "",
       },
       // API Testing
       {
@@ -309,6 +338,11 @@ const techStack = [
         color: "text-[#74AA9C]",
       },
       {
+        name: "Claude API",
+        icon: <SiClaude className="w-5 h-5" />,
+        color: "text-[#d77655]",
+      },
+      {
         name: "Ollama",
         icon: <SiOllama className="w-5 h-5" />,
         color: "text-zinc-100",
@@ -378,6 +412,21 @@ function TechGroup({ group }: { group: (typeof techStack)[0] }) {
                 {item.icon}
               </span>
             );
+          } else if (item.name === "Katalon") {
+            iconEl = (
+              <img
+                src={
+                  theme === "light"
+                    ? "/icons/katalon-icon-light.svg"
+                    : "/icons/katalon-icon.svg"
+                }
+                alt="Katalon"
+                width={20}
+                height={20}
+                loading="lazy"
+                className="w-5 h-5 object-contain"
+              />
+            );
           }
           return (
             <div
@@ -439,6 +488,21 @@ function TechGroup({ group }: { group: (typeof techStack)[0] }) {
                       <span className="w-5 h-5 flex items-center justify-center text-[#09090b]">
                         {item.icon}
                       </span>
+                    );
+                  } else if (item.name === "Katalon") {
+                    iconEl = (
+                      <img
+                        src={
+                          theme === "light"
+                            ? "/icons/katalon-icon-light.svg"
+                            : "/icons/katalon-icon.svg"
+                        }
+                        alt="Katalon"
+                        width={20}
+                        height={20}
+                        loading="lazy"
+                        className="w-5 h-5 object-contain"
+                      />
                     );
                   }
                   return (
