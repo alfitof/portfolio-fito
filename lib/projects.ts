@@ -11,7 +11,14 @@ export const projects: Project[] = [
   {
     name: "Book Your Cut",
     desc: "SaaS platform for managing barber bookings, schedules, and customer appointments.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "n8n",
+      "Firebase",
+      "Playwright",
+    ],
     category: "Web",
     year: "2026",
     link: "https://bookyourcut.alfitofebriansyah.blog/",
