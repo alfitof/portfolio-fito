@@ -40,6 +40,14 @@ export const projects: Project[] = [
     link: "https://calculator.alfitofebriansyah.blog/",
   },
   {
+    name: "QR Cute",
+    desc: "QR generator that creates clean, customizable codes with a cute touch.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    category: "Web",
+    year: "2026",
+    link: "https://qrcute.alfitofebriansyah.blog/",
+  },
+  {
     name: "The Doors Game",
     desc: "Interactive game inspired by the stardew valley.",
     tech: ["HTML Canvas", "CSS", "Aseprite"],
