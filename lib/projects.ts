@@ -102,15 +102,7 @@ export const projects: Project[] = [
     tech: ["Next.js", "Tailwind CSS"],
     category: "Web",
     year: "2023",
-    link: "#",
-  },
-  {
-    name: "Logbook AirNav Website",
-    desc: "Tool quality tracking notebook for AirNav internal operations.",
-    tech: ["Next.js", "Tailwind CSS", "Firebase"],
-    category: "Web",
-    year: "2023",
-    link: "#",
+    link: "https://www.rudirussel-akademie.com/",
   },
   {
     name: "LMS Rudi Russel",
@@ -118,7 +110,7 @@ export const projects: Project[] = [
     tech: ["Next.js", "Tailwind CSS", "Firebase"],
     category: "Web",
     year: "2023",
-    link: "#",
+    link: "https://db-rudirussel.vercel.app/",
   },
   {
     name: "ASE Laboratory Website",
@@ -126,7 +118,7 @@ export const projects: Project[] = [
     tech: ["React", "Tailwind CSS"],
     category: "Web",
     year: "2022",
-    link: "#",
+    link: "https://ase-lab.vercel.app/",
   },
   {
     name: "UMKM Mie Aceh Website",
@@ -134,7 +126,7 @@ export const projects: Project[] = [
     tech: ["MongoDB", "Express.js", "SCSS", "Node.js"],
     category: "Web",
     year: "2022",
-    link: "#",
+    link: "https://github.com/alfitof/umkm-web-mieAceh",
   },
   {
     name: "Droozle Store Website",
@@ -142,7 +134,7 @@ export const projects: Project[] = [
     tech: ["PHP", "CodeIgniter", "Bootstrap"],
     category: "Web",
     year: "2022",
-    link: "#",
+    link: "https://droozle.netlify.app/",
   },
   {
     name: "KliniQ App Design",
@@ -150,6 +142,6 @@ export const projects: Project[] = [
     tech: ["Figma"],
     category: "Design",
     year: "2022",
-    link: "#",
+    link: "https://www.figma.com/proto/3iLspw3IrqBkjEfkM0kwUK/KliniQ-(Tim-Restu-Ibu)?node-id=26%3A80&scaling=scale-down&page-id=0%3A1&starting-point-node-id=26%3A80",
   },
 ];
