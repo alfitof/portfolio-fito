@@ -26,7 +26,14 @@ export const projects: Project[] = [
   {
     name: "Bagi Bareng",
     desc: "SaaS platform to split bills by scanning receipts and auto-calculating shares.",
-    tech: ["Next.js", "TypeScript", "Ant Design", "Tesseract.js"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Ant Design",
+      "Tesseract.js",
+      "n8n",
+      "OpenAI API",
+    ],
     category: "Web",
     year: "2026",
     link: "https://bagibareng.alfitofebriansyah.blog/",
