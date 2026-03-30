@@ -39,12 +39,12 @@ export const projects: Project[] = [
     link: "https://bagibareng.alfitofebriansyah.blog/",
   },
   {
-    name: "Calculator",
-    desc: "A funny calculator that refuses to give instant answers—because even math needs patience.",
-    tech: ["Next.js", "TypeScript", "Pure CSS"],
+    name: "Pawcation",
+    desc: "Pet-friendly travel platform for finding accommodations, activities, and services for pets.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     category: "Web",
     year: "2026",
-    link: "https://calculator.alfitofebriansyah.blog/",
+    link: "https://pawcation.alfitofebriansyah.blog/",
   },
   {
     name: "QR Cute",
@@ -61,6 +61,14 @@ export const projects: Project[] = [
     category: "Web",
     year: "2025",
     link: "https://thedoors.alfitofebriansyah.blog/",
+  },
+  {
+    name: "Calculator",
+    desc: "A funny calculator that refuses to give instant answers—because even math needs patience.",
+    tech: ["Next.js", "TypeScript", "Pure CSS"],
+    category: "Web",
+    year: "2026",
+    link: "https://calculator.alfitofebriansyah.blog/",
   },
   {
     name: "Temu Jiwa",
