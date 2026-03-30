@@ -77,7 +77,7 @@ const techStack = [
       {
         name: "Tailwind CSS",
         icon: <SiTailwindcss className="w-5 h-5" />,
-        color: "text-[#4169E1]",
+        color: "text-[#38bdf8]",
       },
       {
         name: "Sass",
@@ -266,7 +266,7 @@ const techStack = [
         name: "Figma",
         icon: (
           <img
-            src="/icons/figma-icon.png"
+            src="/icons/figma-icon.svg"
             alt="Figma"
             width={20}
             height={20}
@@ -285,6 +285,20 @@ const techStack = [
         name: "Adobe Illustrator",
         icon: <DiIllustrator className="w-5 h-5" />,
         color: "text-[#ff9d08]",
+      },
+      {
+        name: "Aseprite",
+        icon: (
+          <img
+            src="/icons/aseprite-icon.png"
+            alt="Aseprite"
+            width={20}
+            height={20}
+            loading="lazy"
+            className="w-5 h-5 object-contain"
+          />
+        ),
+        color: "",
       },
       // Database & Cloud
       {
