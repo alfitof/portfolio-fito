@@ -55,6 +55,14 @@ export const projects: Project[] = [
     link: "https://qrcute.alfitofebriansyah.blog/",
   },
   {
+    name: "PDF Converter",
+    desc: "Simple tool to convert files to PDF format with a user-friendly interface.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    category: "Web",
+    year: "2026",
+    link: "https://pdfconverter.alfitofebriansyah.blog/",
+  },
+  {
     name: "The Doors Game",
     desc: "Interactive game inspired by the stardew valley.",
     tech: ["HTML Canvas", "CSS", "Aseprite"],
