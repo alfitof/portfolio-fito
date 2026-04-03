@@ -39,6 +39,14 @@ export const projects: Project[] = [
     link: "https://bagibareng.alfitofebriansyah.blog/",
   },
   {
+    name: "Gimana Enaknya",
+    desc: "AI platform to compare two choices and get quick, clear insights.",
+    tech: ["Nuxt.js", "Vue 3", "Tailwind CSS", "n8n", "OpenAI API"],
+    category: "Web",
+    year: "2026",
+    link: "https://gimana-enaknya.alfitofebriansyah.blog/",
+  },
+  {
     name: "Pawcation",
     desc: "Pet-friendly travel platform for finding accommodations, activities, and services for pets.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
