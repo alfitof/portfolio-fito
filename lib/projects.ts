@@ -55,6 +55,14 @@ export const projects: Project[] = [
     link: "https://pawcation.alfitofebriansyah.blog/",
   },
   {
+    name: "Linkly",
+    desc: "A simple link-in-bio platform to showcase and share all your important links in one place.",
+    tech: ["Nuxt.js", "Vue 3", "TypeScript", "Tailwind CSS"],
+    category: "Web",
+    year: "2026",
+    link: "https://linkly.alfitofebriansyah.blog/",
+  },
+  {
     name: "QR Cute",
     desc: "QR generator that creates clean, customizable codes with a cute touch.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
