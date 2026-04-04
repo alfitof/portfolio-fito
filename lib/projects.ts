@@ -25,7 +25,7 @@ export const projects: Project[] = [
   },
   {
     name: "Bagi Bareng",
-    desc: "SaaS platform to split bills by scanning receipts and auto-calculating shares.",
+    desc: "AI platform to split bills by scanning receipts and auto-calculating shares.",
     tech: [
       "Next.js",
       "TypeScript",
