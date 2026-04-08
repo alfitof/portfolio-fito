@@ -122,8 +122,17 @@ const techStack = [
       },
       {
         name: "Python",
-        icon: <SiPython className="w-5 h-5" />,
-        color: "text-[#3776AB]",
+        icon: (
+          <img
+            src="/icons/python-icon.png"
+            alt="Python"
+            width={20}
+            height={20}
+            loading="lazy"
+            className="w-5 h-5 object-contain"
+          />
+        ),
+        color: "",
       },
       // Relational DB
       {
