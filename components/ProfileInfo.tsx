@@ -37,7 +37,7 @@ export default function ProfileInfo() {
     },
     {
       icon: <Clock className={iconClass} style={iconStyle} />,
-      label: time ? `${time} // same time` : "...",
+      label: time ? `${time} (UTC +07:00) // same time` : "...",
     },
     {
       icon: <Lightbulb className={iconClass} style={iconStyle} />,
