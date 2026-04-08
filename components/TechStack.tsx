@@ -261,6 +261,20 @@ const techStack = [
         icon: <SiJira className="w-5 h-5" />,
         color: "text-[#2e87ff]",
       },
+      {
+        name: "Redmine",
+        icon: (
+          <img
+            src="/icons/redmine-icon.svg"
+            alt="Redmine"
+            width={20}
+            height={20}
+            loading="lazy"
+            className="w-5 h-5 object-contain"
+          />
+        ),
+        color: "",
+      },
       // Design
       {
         name: "Figma",
@@ -329,11 +343,19 @@ const techStack = [
         ),
         color: "",
       },
-      // Editor
       {
-        name: "VSCode",
-        icon: <VscVscode className="w-5 h-5" />,
-        color: "text-[#007ACC]",
+        name: "IBM AS400",
+        icon: (
+          <img
+            src="/icons/ibm-icon.svg"
+            alt="IBM AS400"
+            width={20}
+            height={20}
+            loading="lazy"
+            className="w-5 h-5 object-contain"
+          />
+        ),
+        color: "",
       },
     ],
   },
