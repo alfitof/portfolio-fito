@@ -23,7 +23,10 @@ const experiences = [
     location: "Tangerang Selatan, Banten",
     period: "Aug 2025 — Current",
     points: [
-      "Currently responsible for ensuring the quality and reliability of the One Statement project",
+      "Conducted end-to-end and regression testing for the One Statement project, ensuring data accuracy by validating statement contents against IBM AS400 and ETP systems.",
+      "Performed System Integration Testing (SIT) and User Acceptance Testing (UAT) to ensure system functionality and business requirement alignment.",
+      "Developed and maintained 20+ UI automation test assets weekly using UFT One to improve testing efficiency and coverage.",
+      "Executed API testing using TestNG to validate service reliability, response accuracy, and integration stability.",
     ],
   },
   {
@@ -435,7 +438,7 @@ export default function Home() {
       >
         <div className="max-w-5xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
           <p className="text-[10px]" style={{ color: "var(--text-muted)" }}>
-            © 2025 Alfito Febriansyah. Built with Next.js
+            © 2026 Alfito Febriansyah.
           </p>
           <div className="flex items-center gap-4">
             {[
