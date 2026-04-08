@@ -86,31 +86,54 @@ export const posts: Post[] = [
     readTime: "6 min read",
     tags: ["n8n", "automation"],
     content: `
-      <p>If you've ever wanted to automate repetitive tasks — moving data between apps, sending notifications, triggering workflows — you've probably heard of Zapier or Make. But <strong>n8n</strong> is different. It's open-source, self-hostable, and far more flexible for developers who want full control.</p>
+  <p>I used to automate things the hard way.</p>
+  <p>Small scripts, cron jobs, random APIs stitched together — it worked, but every time something broke, I had to trace everything manually. It felt like building a fragile system out of duct tape.</p>
+  <p>Then I found <strong>n8n</strong>. At first, I didn't think much of it. Just another "automation tool", right?</p>
+  <p>I was wrong.</p>
 <br />
-      <h2>What is n8n?</h2>
-      <p>n8n (pronounced "nodemation") is a workflow automation platform that lets you connect apps and services using a visual node-based editor. Think of each node as a step in your workflow — fetch data, transform it, send it somewhere else.</p>
-      <p>What sets it apart: you can run it on your own server, write custom JavaScript inside any node, and connect to virtually any API with the HTTP Request node.</p>
+  <h2>How I actually started using it</h2>
+  <p>My first workflow was simple: a form submission → send notification → store data.</p>
+  <p>Nothing fancy. Honestly, something I could've done with a small backend service.</p>
+  <p>But what surprised me wasn't what it did — it was how easy it was to extend.</p>
+  <p>I didn't need to rewrite anything. I just added more nodes.</p>
 <br />
-      <h2>Setting Up Locally</h2>
-      <p>The fastest way to get started is with Docker:</p>
-      <pre><code>docker run -it --rm \
-  --name n8n \
-  -p 5678:5678 \
-  n8nio/n8n</code></pre>
-      <p>Then open <code>http://localhost:5678</code> and you'll be greeted by the workflow editor.</p>
+  <h2>Where it started to click</h2>
+  <p>After the first workflow worked, I kept pushing it:</p>
+  <ul>
+    <li>Adding conditional logic</li>
+    <li>Transforming data before sending it</li>
+    <li>Triggering multiple services in parallel</li>
+  </ul>
+  <p>At some point, I realized — this wasn't just automation.</p>
+  <p>This was orchestration.</p>
 <br />
-      <h2>Your First Workflow</h2>
-      <p>Let's build something simple: every time a form is submitted, send a Slack notification and log the data to Google Sheets.</p>
-      <p>You'd need three nodes: a <strong>Webhook</strong> node to receive the form submission, a <strong>Google Sheets</strong> node to append the row, and a <strong>Slack</strong> node to send the message. Connect them in order, configure credentials, and activate the workflow — done.</p>
+  <h2>The part that changed everything</h2>
+  <p>The <strong>Code node</strong>.</p>
+  <p>This is where n8n stopped feeling like a no-code tool and started feeling like a developer tool.</p>
+  <p>Whenever the visual nodes weren't enough, I could just drop into JavaScript and handle things properly.</p>
+  <p>No limitations. No weird workarounds.</p>
 <br />
-      <h2>Why Developers Love It</h2>
-      <p>The real power comes from the <strong>Code node</strong>, which lets you write arbitrary JavaScript or Python in the middle of any workflow. You can reshape data, call custom functions, or implement complex logic that no drag-and-drop tool could handle.</p>
-      <p>Combined with self-hosting, version control via workflow export, and a growing library of 400+ integrations, n8n is becoming the go-to automation layer for developer-led teams.</p>
+  <h2>Self-hosting was a game changer</h2>
+  <p>Running n8n on my own server completely changed how I used it.</p>
+  <p>No rate limits. No per-task billing. No worrying about hitting some arbitrary ceiling.</p>
+  <p>It felt like owning the automation layer, instead of renting it.</p>
 <br />
-      <h2>When to Use n8n vs Writing Custom Code</h2>
-      <p>n8n shines when you're connecting existing services and the logic is orchestration-heavy but not compute-heavy. For complex data transformations or high-throughput processing, you're better off writing a proper service. But for the 80% of automation tasks that are just "get data, do something, put it somewhere else" — n8n will save you hours.</p>
-    `,
+  <h2>Where I messed up</h2>
+  <p>At one point, I tried to push too much logic into n8n.</p>
+  <p>Complex transformations, heavy processing, decision trees that should've lived in code.</p>
+  <p>And that's where things got messy.</p>
+  <p>Debugging became harder. Workflows became harder to read. Everything slowed down.</p>
+<br />
+  <h2>What I learned</h2>
+  <p>n8n is not meant to replace your backend.</p>
+  <p>It's meant to connect it.</p>
+  <p>Once I started treating it as an orchestration layer — not a logic engine — everything became clean again.</p>
+<br />
+  <h2>Final thoughts</h2>
+  <p>n8n didn't replace coding for me.</p>
+  <p>It removed the boring parts of coding.</p>
+  <p>And honestly, that's where most of the time goes.</p>
+`,
   },
   {
     slug: "getting-started-with-uft-one",
@@ -122,43 +145,45 @@ export const posts: Post[] = [
     readTime: "7 min read",
     tags: ["testing", "uft", "qa"],
     content: `
-    <p>When it comes to functional test automation for enterprise applications — think SAP, Salesforce, web apps, desktop apps, and even mainframes — <strong>UFT One</strong> (Unified Functional Testing, formerly HP QTP) remains one of the most comprehensive tools available. It's not lightweight, and it's not cheap, but in the right environment it's remarkably capable.</p>
+  <p>I didn't plan to learn <strong>UFT One</strong>.</p>
+  <p>I had to.</p>
+  <p>The project I was working on required it — enterprise system, complex flows, multiple technologies involved.</p>
+  <p>At first glance, it felt outdated. The UI, the scripting language, everything.</p>
+  <p>It didn't feel like something you'd choose in 2026.</p>
 <br />
-    <h2>What is UFT One?</h2>
-    <p>UFT One is an automated functional testing tool developed by OpenText (formerly Micro Focus). It supports a wide range of technologies out of the box: web, mobile, desktop, SAP, Oracle, Salesforce, APIs, and more — all from a single tool. This makes it particularly valuable in enterprise environments where applications span multiple technologies.</p>
-    <p>Tests in UFT One are written in <strong>VBScript</strong>, which can feel dated compared to modern frameworks, but the object repository and keyword-driven testing model make it accessible even for non-developers.</p>
+  <h2>First impression: this feels old</h2>
+  <p>VBScript. Object Repository. Record & Playback.</p>
+  <p>It felt like stepping into a different era of software development.</p>
+  <p>And honestly, I underestimated it because of that.</p>
 <br />
-    <h2>Key Concepts</h2>
-    <p>Before diving in, there are a few core concepts worth understanding. The <strong>Object Repository</strong> stores all UI objects (buttons, fields, dropdowns) that your test interacts with. Think of it as a map of your application's UI elements. The <strong>Action</strong> is a reusable unit of test logic — similar to a function or method. A test is composed of one or more actions. And <strong>DataTable</strong> is UFT One's built-in data source, similar to a spreadsheet, used for data-driven testing.</p>
+  <h2>Then reality hit</h2>
+  <p>The application I was testing wasn't a simple web app.</p>
+  <p>It had complex UI behavior, dynamic elements, and some parts that just didn't play nicely with modern testing tools.</p>
+  <p>And somehow… UFT handled it.</p>
 <br />
-    <h2>Your First Test</h2>
-    <p>Getting started is straightforward. Once UFT One is installed and connected to your application, you can use the <strong>Record & Playback</strong> feature to generate a basic test automatically:</p>
-    <pre><code>' Example: Login test in VBScript
-Browser("MyApp").Page("Login").WebEdit("username").Set "testuser"
-Browser("MyApp").Page("Login").WebEdit("password").SetSecure "encryptedpassword"
-Browser("MyApp").Page("Login").WebButton("Login").Click
+  <h2>Where it actually shines</h2>
+  <p>The <strong>Object Repository</strong> looked annoying at first, but once the project grew, it became useful.</p>
+  <p>Instead of chasing selectors everywhere, everything was centralized.</p>
 <br />
-If Browser("MyApp").Page("Dashboard").Exist(5) Then
-  Reporter.ReportEvent micPass, "Login Test", "Login successful"
-Else
-  Reporter.ReportEvent micFail, "Login Test", "Login failed"
-End If</code></pre>
-    <p>The object hierarchy — Browser → Page → WebEdit — mirrors the structure of the application, making tests highly readable once you're familiar with the syntax.</p>
+  <p>And then there was <strong>Smart Identification</strong>.</p>
+  <p>This feature alone saved me from rewriting tests multiple times when UI changes happened.</p>
 <br />
-    <h2>Smart Identification</h2>
-    <p>One of UFT One's most powerful features is <strong>Smart Identification</strong>. When a UI object can't be found using its primary properties (because the UI changed slightly), UFT One uses a fallback set of properties to locate it. This dramatically reduces test maintenance compared to tools that rely on brittle XPath or CSS selectors alone.</p>
+  <h2>The trade-offs</h2>
+  <p>It's not lightweight.</p>
+  <p>It's not flexible like modern JS-based frameworks.</p>
+  <p>And debugging sometimes feels slower than it should be.</p>
 <br />
-    <h2>Integrating with ALM and CI/CD</h2>
-    <p>UFT One integrates natively with <strong>ALM (Application Lifecycle Management)</strong>, also by OpenText, for test management, defect tracking, and reporting. For CI/CD integration, UFT One supports execution via command line and REST APIs, making it possible to trigger test runs from Jenkins, Azure DevOps, or any other pipeline tool.</p>
-    <pre><code>// Trigger UFT One test from Jenkins via command line
-UFTBatchRunner.exe /TestPath "C:\\Tests\\LoginTest" /ResultPath "C:\\Results"</code></pre>
+  <p>Also, writing VBScript in a modern dev environment feels… strange.</p>
 <br />
-    <h2>When to Use UFT One</h2>
-    <p>UFT One is best suited for large enterprise environments where the application under test spans multiple technologies, where a commercial support contract is required, or where integration with ALM is needed. For greenfield web or mobile projects, lighter tools like Playwright or Cypress are usually a better fit. But for legacy enterprise systems — particularly anything involving SAP or desktop applications — UFT One is often the only tool that handles them reliably.</p>
+  <h2>What changed my perspective</h2>
+  <p>I stopped comparing it to modern tools.</p>
+  <p>And started seeing it for what it is — a tool built for complex enterprise systems.</p>
 <br />
-    <h2>Tips from the Field</h2>
-    <p>Keep your Object Repository organized from day one — a messy OR becomes unmanageable quickly. Use descriptive programming (defining objects inline rather than relying on the OR) for dynamic elements that change frequently. And invest time in understanding the <strong>Reporter</strong> object — good test reporting is what turns raw automation into actionable QA intelligence.</p>
-  `,
+  <h2>Final thoughts</h2>
+  <p>Would I use UFT One for a startup or side project? No.</p>
+  <p>But in the environment it was designed for?</p>
+  <p>It makes a lot more sense than I expected.</p>
+`,
   },
   {
     slug: "building-ai-agents",
@@ -169,38 +194,58 @@ UFTBatchRunner.exe /TestPath "C:\\Tests\\LoginTest" /ResultPath "C:\\Results"</c
     readTime: "8 min read",
     tags: ["ai", "agents", "llm"],
     content: `
-      <p>The term "AI agent" gets thrown around a lot, but what does it actually mean to build one? At its core, an agent is a system that uses an LLM not just to generate text, but to <strong>reason, plan, and take actions</strong> in the world — calling tools, browsing the web, writing and running code.</p>
+  <p>The first time I built something I called an "AI agent", it wasn't really an agent.</p>
+  <p>It was just a bunch of prompts chained together.</p>
+  <p>And for a while, I thought that was enough.</p>
 <br />
-      <h2>The Anatomy of an Agent</h2>
-      <p>A basic agent has four components: a <strong>language model</strong> (the brain), a set of <strong>tools</strong> it can call, a <strong>memory</strong> system (short-term context + optionally long-term vector storage), and an <strong>orchestration loop</strong> that runs until the task is complete.</p>
-      <p>The loop looks like this: the model receives a task, decides which tool to use, calls the tool, gets the result back, and decides what to do next — repeat until done.</p>
+  <h2>Where it started to break</h2>
+  <p>The moment I needed the system to make decisions — everything fell apart.</p>
+  <p>It couldn't decide what to do next. It couldn't adapt. It just followed instructions blindly.</p>
 <br />
-      <h2>ReAct: The Most Common Agent Pattern</h2>
-      <p>The ReAct (Reasoning + Acting) pattern prompts the model to alternate between thinking out loud and taking action. Each step looks like:</p>
-      <pre><code>Thought: I need to find the current price of BTC.
-Action: web_search("BTC price today")
-Observation: Bitcoin is trading at $67,420.
-Thought: I have the data. I can now answer the question.
-Answer: The current price of Bitcoin is $67,420.</code></pre>
-      <p>This pattern dramatically improves reliability by forcing the model to reason before acting.</p>
+  <h2>Understanding the difference</h2>
+  <p>That's when I realized:</p>
+  <p>An agent is not about generating text.</p>
+  <p>It's about <strong>taking actions and deciding what to do next</strong>.</p>
 <br />
-      <h2>Building One with LangChain</h2>
-      <p>LangChain makes it straightforward to wire up an agent with tools:</p>
-      <pre><code>from langchain.agents import create_react_agent, AgentExecutor
-from langchain_openai import ChatOpenAI
-from langchain.tools import DuckDuckGoSearchRun
+  <h2>My first real agent</h2>
+  <p>I built a simple loop:</p>
+  <ul>
+    <li>Receive a task</li>
+    <li>Decide which tool to use</li>
+    <li>Execute it</li>
+    <li>Evaluate the result</li>
+    <li>Repeat</li>
+  </ul>
+  <p>And suddenly, it felt completely different from a chatbot.</p>
 <br />
-llm = ChatOpenAI(model="gpt-4o")
-tools = [DuckDuckGoSearchRun()]
-agent = create_react_agent(llm, tools, prompt)
-executor = AgentExecutor(agent=agent, tools=tools)</code></pre>
+  <h2>Then things got complicated</h2>
+  <p>I added more tools. More steps. More flexibility.</p>
+  <p>And that's when the real problems showed up:</p>
+  <ul>
+    <li>Agents looping forever</li>
+    <li>Calling the wrong tools</li>
+    <li>Burning tokens unnecessarily</li>
+  </ul>
 <br />
-      <h2>Multi-Agent Systems</h2>
-      <p>Single agents hit limits quickly — context windows fill up, tasks get too complex. The next step is <strong>multi-agent systems</strong>, where specialized agents collaborate: a planner agent breaks down the task, worker agents execute subtasks, and a critic agent reviews the output.</p>
-      <p>Frameworks like <strong>LangGraph</strong> and <strong>CrewAI</strong> make this much easier to implement than rolling your own coordination logic.</p>
+  <h2>The real challenge</h2>
+  <p>It's not building the agent.</p>
+  <p>It's controlling it.</p>
 <br />
-      <h2>The Hard Problems</h2>
-      <p>The technical setup is actually the easy part. The hard problems are reliability (agents can loop or hallucinate tool calls), cost management (long agentic runs burn tokens fast), and knowing when to stop. Building robust agents means investing heavily in evals, guardrails, and human-in-the-loop checkpoints.</p>
-    `,
+  <p>You need:</p>
+  <ul>
+    <li>Clear stopping conditions</li>
+    <li>Well-defined tools</li>
+    <li>Guardrails to prevent bad decisions</li>
+  </ul>
+<br />
+  <h2>What I learned</h2>
+  <p>Frameworks help. But they don't solve the core problem.</p>
+  <p>The real challenge is designing the system around the agent.</p>
+<br />
+  <h2>Final thoughts</h2>
+  <p>Building agents taught me something unexpected.</p>
+  <p>The hardest part isn't making them smart.</p>
+  <p>It's making them reliable.</p>
+`,
   },
 ];
