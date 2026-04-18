@@ -9,53 +9,44 @@ export interface Post {
 }
 
 export const posts: Post[] = [
-  {
-    slug: "qa-engineer-cimb-niaga",
-    title: "8 Months as a QA Engineer at PT Bank CIMB Niaga: What I Learned",
-    excerpt:
-      "From manual testing to UI automation with UFT One — my experience ensuring quality for the One Statement project at one of Indonesia's largest banks.",
-    date: "Apr 18, 2026",
-    readTime: "7 min read",
-    tags: ["qa", "testing", "career"],
-    content: `
-    <p>Eight months ago, I joined PT Bank CIMB Niaga Tbk as a Quality Assurance Engineer — my first role in a large-scale enterprise banking environment.</p>
-    <p>Working on the <strong>One Statement project</strong> has been one of the most technically demanding and rewarding experiences of my career so far. Here's an honest account of what that journey has looked like.</p>
+{
+  slug: "qa-engineer-cimb-niaga",
+  title: "8 Months as a QA Engineer at CIMB Niaga — My Honest Experience",
+  excerpt: "My first time working in enterprise banking as a QA Engineer. Here's what surprised me, what challenged me, and what I'd tell myself on day one.",
+  date: "Apr 18, 2026",
+  readTime: "5 min read",
+  tags: ["qa", "testing", "career"],
+  content: `
+    <p>I never saw myself as a QA engineer. My background was frontend — I built UIs, obsessed over animations, and thought testing was someone else's job.</p>
+    <p>Then I joined CIMB Niaga, and that perspective completely changed.</p>
 <br />
-    <h2>The Project: One Statement</h2>
-    <p>One Statement is a consolidated banking statement platform that aggregates customer financial data across multiple products into a single, unified document.</p>
-    <p>The stakes are high — when dealing with financial statements, data accuracy isn't a nice-to-have, it's an absolute requirement. A single incorrect figure erodes customer trust in ways that are very hard to recover from.</p>
-    <p>My role was to ensure that every piece of data rendered in those statements was correct, complete, and consistent across all scenarios.</p>
+    <h2>Day One: Realizing How Different This Was</h2>
+    <p>Walking into an enterprise banking environment for the first time is humbling. The systems are old, the processes are strict, and there's a level of rigor that I hadn't experienced before.</p>
+    <p>My project was <strong>One Statement</strong> — a platform that consolidates customer financial data into a single document. Sounds simple. It wasn't.</p>
+    <p>Every number had to be exactly right. Not approximately right. Exactly right.</p>
 <br />
-    <h2>Validating Against Legacy Systems</h2>
-    <p>One of the most interesting challenges was validating statement contents against two backend systems: <strong>IBM AS400</strong> and <strong>ETP</strong>. Both are enterprise-grade legacy systems that power much of the bank's core operations.</p>
-    <p>This meant developing a deep familiarity with how data flows between systems — understanding what the source of truth is at each stage, where transformations happen, and how to trace discrepancies back to their root cause.</p>
-    <p>It required a lot of patience, methodical thinking, and close collaboration with backend engineers and business analysts.</p>
+    <h2>Learning to Read Systems I Didn't Build</h2>
+    <p>A big part of my job was validating data against <strong>IBM AS400</strong> and <strong>ETP</strong> — two legacy systems I'd never touched before.</p>
+    <p>I had to understand how data flows between them, where it gets transformed, and how to trace a wrong number back to its source. It was detective work, honestly. Slow at first, then oddly satisfying once the patterns clicked.</p>
 <br />
-    <h2>SIT and UAT: Two Different Worlds</h2>
-    <p>I conducted both <strong>System Integration Testing (SIT)</strong> and <strong>User Acceptance Testing (UAT)</strong>, and the two are fundamentally different in what they demand from a QA engineer.</p>
-    <p>SIT is about technical correctness — does the system behave as designed? Are APIs returning the right payloads? Are database records updated correctly after each transaction? It requires technical depth and the ability to read logs, trace requests, and understand system architecture.</p>
-    <p>UAT, on the other hand, is about business alignment — does the system do what the business actually needs? This requires translating business requirements into test scenarios and working closely with stakeholders who may not have a technical background.</p>
-    <p>Navigating both worlds in the same project has made me a significantly more well-rounded QA engineer.</p>
+    <h2>SIT vs UAT — Two Very Different Games</h2>
+    <p>I ran both <strong>SIT</strong> and <strong>UAT</strong>, and they require completely different mindsets.</p>
+    <p>SIT is technical — you're checking if the system does what engineers designed. UAT is human — you're checking if it does what the business actually needs. Both matter, and learning to switch between those perspectives was probably the biggest skill I developed here.</p>
 <br />
-    <h2>Building UI Automation with UFT One</h2>
-    <p>One of the most impactful contributions I've made in this role is building and maintaining <strong>20+ UI automation test assets weekly</strong> using <strong>UFT One</strong> (Unified Functional Testing).</p>
-    <p>UFT One is an enterprise automation tool that supports both web and desktop application testing. Coming from a frontend development background, I was already comfortable with the idea of scripting UI interactions — but UFT One operates on a different level.</p>
-    <p>It uses VBScript as its scripting language and integrates deeply with the application under test through object recognition.</p>
-    <p>Building a reliable automation suite meant investing time upfront in creating a clean object repository, writing reusable action libraries, and designing test flows that were maintainable as the application evolved.</p>
-    <p>The payoff was significant — regression cycles that would have taken days manually were reduced to hours.</p>
+    <h2>Building Automation with UFT One</h2>
+    <p>This was the part I was most nervous about. UFT One uses VBScript, which I had zero experience with.</p>
+    <p>But after a few weeks of pain, something clicked. I ended up building and maintaining <strong>20+ UI automation test assets weekly</strong> — and watching a regression suite that used to take days run in a few hours felt genuinely rewarding.</p>
+    <p>It reminded me a lot of frontend development, actually. You build something, it breaks, you fix it, it breaks again. Eventually you figure out how to make it resilient.</p>
 <br />
     <h2>API Testing with TestNG</h2>
-    <p>Beyond UI, I also performed <strong>API testing using TestNG</strong> — validating service reliability, response accuracy, and integration stability across the system's microservices layer.</p>
-    <p>TestNG's strength lies in its flexibility: parameterized tests, data-driven testing, and parallel execution make it well-suited for testing APIs at scale.</p>
-    <p>Writing test cases that cover edge cases, boundary conditions, and error handling taught me a lot about how robust backend services are — and should be — designed.</p>
+    <p>Alongside UI automation, I also did <strong>API testing using TestNG</strong> — validating response accuracy, service reliability, and integration stability.</p>
+    <p>This pushed me to understand the backend layer more deeply than I ever had as a frontend dev. Knowing what's happening on the server side made me a better tester — and honestly, a better developer overall.</p>
 <br />
-    <h2>What Banking QA Taught Me</h2>
-    <p>Working in a regulated, enterprise banking environment is different from anything I'd experienced in startup or agency contexts. The processes are more rigorous, the documentation requirements are stricter, and the tolerance for defects escaping to production is essentially zero.</p>
-    <p>It has taught me to be more disciplined in my approach to testing — not just finding bugs, but building confidence in the system through structured, repeatable processes.</p>
-    <p>It has also reinforced something I already believed: <strong>quality is a team responsibility</strong>, not something that can be bolted on at the end of a development cycle.</p>
-    <p>Eight months in, I'm still learning every day. The intersection of legacy enterprise systems, modern automation tooling, and high-stakes financial data is a uniquely challenging space — and one I'm glad to be working in.</p>
+    <h2>What I'd Tell Myself on Day One</h2>
+    <p>Quality isn't just about finding bugs. It's about building enough confidence in a system that you can sleep at night knowing it won't break in production.</p>
+    <p>Eight months in, I still don't have all the answers. But I'm asking much better questions — and in QA, that might be the whole job.</p>
   `,
-  },
+},
   {
     slug: "building-trading-bot-with-openclaw-rust",
     title:
@@ -129,7 +120,7 @@ export const posts: Post[] = [
       "Getting Started with n8n: Automate Everything Without Writing Much Code",
     excerpt:
       "n8n is one of the most powerful open-source workflow automation tools available. Here's how to get started and what makes it different from Zapier or Make.",
-    date: "Mar 10, 2025",
+    date: "Mar 10, 2026",
     readTime: "6 min read",
     tags: ["n8n", "automation"],
     content: `
@@ -188,7 +179,7 @@ export const posts: Post[] = [
       "Getting Started with UFT One: Functional Testing for Enterprise Applications",
     excerpt:
       "UFT One is one of the most powerful functional testing tools for enterprise-grade applications. Here's a practical introduction to getting started and what makes it stand out.",
-    date: "Mar 18, 2025",
+    date: "Mar 18, 2026",
     readTime: "7 min read",
     tags: ["testing", "uft", "qa"],
     content: `
@@ -237,7 +228,7 @@ export const posts: Post[] = [
     title: "Building AI Agents: From Prompt Chains to Autonomous Systems",
     excerpt:
       "AI agents are more than just chatbots. They plan, use tools, and execute multi-step tasks. Here's a practical introduction to building your first agent.",
-    date: "Feb 18, 2025",
+    date: "Feb 18, 2026",
     readTime: "8 min read",
     tags: ["ai", "agents", "llm"],
     content: `
