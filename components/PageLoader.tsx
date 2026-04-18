@@ -9,7 +9,7 @@ const getLabel = (pathname: string) => {
   if (pathname === "/blog") return "blog";
   if (pathname === "/projects") return "projects";
   if (pathname.startsWith("/blog/")) return "post";
-  return "...";
+  return "loading";
 };
 
 export default function PageLoader() {
@@ -19,13 +19,11 @@ export default function PageLoader() {
 
   useEffect(() => {
     setLoading(true);
-
-    const duration = isFirst ? 1000 : 600;
+    const duration = isFirst ? 1200 : 500;
     const timer = setTimeout(() => {
       setLoading(false);
       setIsFirst(false);
     }, duration);
-
     return () => clearTimeout(timer);
   }, [pathname]);
 
@@ -34,116 +32,80 @@ export default function PageLoader() {
       {loading && (
         <motion.div
           key={pathname}
-          className="fixed inset-0 z-[9999] flex"
-          initial="initial"
-          exit="exit"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center"
+          style={{ backgroundColor: "var(--bg)" }}
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35, ease: "easeInOut" }}
         >
-          <motion.div
-            className="relative w-1/2 h-full flex items-center justify-end pr-8 md:pr-16"
-            style={{ backgroundColor: "var(--bg)" }}
-            variants={{
-              initial: { x: 0 },
-              exit: {
-                x: "-100%",
-                transition: {
-                  duration: 0.6,
-                  ease: [0.76, 0, 0.24, 1],
-                  delay: 0.1,
-                },
-              },
+          {/* Grid background sama seperti halaman utama */}
+          <div
+            className="fixed inset-0 pointer-events-none"
+            aria-hidden="true"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+              `,
+              backgroundSize: "24px 24px",
             }}
-          >
-            <motion.div
-              className="flex flex-col items-end gap-2"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-            >
-              <span
-                className="font-mono font-bold text-2xl md:text-3xl tracking-tight"
-                style={{ color: "var(--text-heading)" }}
-              >
-                Alfito
-              </span>
-              <span
-                className="font-mono text-[10px] uppercase tracking-widest"
-                style={{ color: "var(--text-muted)" }}
-              >
-                ~/portfolio
-              </span>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2"
-            style={{ backgroundColor: "var(--border)" }}
-            initial={{ scaleY: 0, originY: 0 }}
-            animate={{ scaleY: 1 }}
-            exit={{
-              scaleY: 0,
-              originY: 0,
-              transition: { duration: 0.3, ease: "easeIn" },
-            }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           />
 
-          <motion.div
-            className="relative w-1/2 h-full flex items-center justify-start pl-8 md:pl-16"
-            style={{ backgroundColor: "var(--bg-card)" }}
-            variants={{
-              initial: { x: 0 },
-              exit: {
-                x: "100%",
-                transition: {
-                  duration: 0.6,
-                  ease: [0.76, 0, 0.24, 1],
-                  delay: 0.1,
-                },
-              },
-            }}
-          >
+          <div className="relative flex flex-col items-center gap-10">
+            {/* Name */}
             <motion.div
-              className="flex flex-col items-start gap-2"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
+              className="flex flex-col items-center gap-1"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               <span
-                className="font-mono font-bold text-2xl md:text-3xl tracking-tight"
+                className="font-mono font-bold text-xl tracking-tight"
                 style={{ color: "var(--text-heading)" }}
               >
-                Febriansyah
+                Alfito Febriansyah
               </span>
-              <div className="flex items-center gap-2">
-                <motion.div
-                  className="w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: "var(--text-secondary)" }}
-                  animate={{ opacity: [1, 0.2, 1] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                />
-                <span
-                  className="font-mono text-[10px] uppercase tracking-widest"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  {getLabel(pathname)}
-                </span>
-              </div>
+              <span
+                className="font-mono text-[10px] uppercase tracking-[0.2em]"
+                style={{ color: "var(--text-muted)" }}
+              >
+                ~/{getLabel(pathname)}
+              </span>
             </motion.div>
-          </motion.div>
 
-          <div
-            className="absolute bottom-0 left-0 right-0 h-px"
-            style={{ backgroundColor: "var(--border)" }}
-          >
+            {/* Dots */}
             <motion.div
-              className="h-full"
-              style={{ backgroundColor: "var(--text-secondary)" }}
-              initial={{ width: "0%" }}
-              animate={{ width: "100%" }}
-              transition={{
-                duration: isFirst ? 0.9 : 0.5,
-                ease: [0.16, 1, 0.3, 1],
-              }}
+              className="flex items-center gap-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.15 }}
+            >
+              {[0, 1, 2].map((i) => (
+                <motion.div
+                  key={i}
+                  className="w-1 h-1 rounded-full"
+                  style={{ backgroundColor: "var(--text-muted)" }}
+                  animate={{
+                    y: ["0%", "-80%", "0%"],
+                    opacity: [0.3, 1, 0.3],
+                  }}
+                  transition={{
+                    duration: 0.65,
+                    repeat: Infinity,
+                    delay: i * 0.12,
+                    ease: "easeInOut",
+                  }}
+                />
+              ))}
+            </motion.div>
+
+            {/* Bottom border line */}
+            <motion.div
+              className="absolute -bottom-6 left-1/2 -translate-x-1/2 h-px"
+              style={{ backgroundColor: "var(--border)" }}
+              initial={{ width: 0 }}
+              animate={{ width: 120 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             />
           </div>
         </motion.div>
