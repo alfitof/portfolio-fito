@@ -9,7 +9,7 @@ import PageLoader from "@/components/PageLoader";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.alfitofebriansyah.blog"),
   title: {
-    default: "Alfito Febriansyah — SWE & QA",
+    default: "Alfito Febriansyah — Software Engineer & QA",
     template: "%s | Alfito Febriansyah",
   },
   description:
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.alfitofebriansyah.blog",
     siteName: "Alfito Febriansyah",
-    title: "Alfito Febriansyah — SWE & QA",
+    title: "Alfito Febriansyah — Software Engineer & QA",
     description:
       "Personal portfolio and blog of Alfito Febriansyah — Software Engineer and Quality Assurance Engineer based in Tangerang Selatan, Indonesia.",
     images: [
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpeg",
         width: 1200,
         height: 630,
-        alt: "Alfito Febriansyah — SWE & QA",
+        alt: "Alfito Febriansyah — Software Engineer & QA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alfito Febriansyah — SWE & QA",
+    title: "Alfito Febriansyah — Software Engineer & QA",
     description:
       "Personal portfolio and blog of Alfito Febriansyah — Software Engineer and Quality Assurance Engineer.",
     images: ["/og-image.jpeg"],
@@ -79,6 +79,22 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        (function() {
+          try {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+              document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+              document.documentElement.setAttribute('data-theme', 'dark');
+            }
+          } catch(e) {}
+        })();
+      `,
+    }}
+  />
         <link rel="dns-prefetch" href="https://api.resend.com" />
 
         <link
@@ -165,7 +181,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Alfito Febriansyah",
               url: "https://www.alfitofebriansyah.blog",
-              jobTitle: "SWE & Quality Assurance Engineer",
+              jobTitle: "Software Engineer & Quality Assurance Engineer",
               worksFor: {
                 "@type": "Organization",
                 name: "PT Bank CIMB Niaga Tbk",
