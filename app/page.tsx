@@ -223,8 +223,7 @@ export default function Home() {
                   className="text-sm mb-6"
                   style={{ color: "var(--text-secondary)" }}
                 >
-                  Creating with code.{" "}
-                  <span className="text-blue-400">Small details matter.</span>
+                  Engineer by day. Tester by conviction.
                 </p>
                 <ProfileInfo />
               </motion.div>
