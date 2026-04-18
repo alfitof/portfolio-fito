@@ -27,7 +27,7 @@ export default function Navbar({ active }: { active?: string }) {
           className="text-xs tracking-widest uppercase transition-colors"
           style={{ color: "var(--text-secondary)" }}
         >
-          ~/portfolio & blogs
+          ~/portfolio & blog
         </Link>
 
         <div
