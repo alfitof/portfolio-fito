@@ -25,7 +25,7 @@ export default function RecentPosts() {
           <Link
             key={i}
             href={`/blog/${post.slug}`}
-            className="group flex flex-col sm:flex-row sm:items-start sm:justify-between py-4 -mx-4 px-4 transition-colors gap-1 sm:gap-0"
+            className="group flex flex-col sm:flex-row sm:items-start sm:justify-between py-6 -mx-4 px-4 transition-colors gap-1 sm:gap-0"
             style={{ borderBottom: "1px solid var(--border)" }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.backgroundColor = "var(--bg-card-hover)")
