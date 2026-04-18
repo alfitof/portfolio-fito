@@ -79,7 +79,7 @@ export default function ProjectsPreview() {
             className="col-span-1 sm:col-span-2 md:col-span-3"
             style={{ backgroundColor: "var(--bg)" }}
           >
-            <div className="flex justify-center pt-4 pb-2">
+            <div className="flex justify-center pt-[2.5rem] pb-2">
               <Link
                 href="/projects"
                 className="text-[10px] uppercase tracking-widest transition-colors hover:opacity-80 flex items-center gap-2"

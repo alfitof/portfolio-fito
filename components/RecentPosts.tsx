@@ -75,7 +75,7 @@ export default function RecentPosts() {
       </div>
 
       {posts.length > PREVIEW_COUNT && (
-        <div className="mt-6 flex justify-center">
+        <div className="mt-[2.5rem] flex justify-center">
           <Link
             href="/blog"
             className="text-[10px] uppercase tracking-widest transition-colors hover:opacity-80 flex items-center gap-2"
