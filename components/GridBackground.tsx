@@ -6,7 +6,7 @@ export default function GridBackground() {
   const { theme } = useTheme();
 
   const color =
-    theme === "light" ? "rgba(0,0,0,0.04)" : "rgba(255,255,255,0.03)";
+    theme === "light" ? "rgba(0,0,0,0.025)" : "rgba(255,255,255,0.01)";
 
   return (
     <div
@@ -17,7 +17,7 @@ export default function GridBackground() {
           linear-gradient(${color} 1px, transparent 1px),
           linear-gradient(90deg, ${color} 1px, transparent 1px)
         `,
-        backgroundSize: "48px 48px",
+        backgroundSize: "16px 16px",
       }}
     />
   );

@@ -3,6 +3,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import PWARegister from "@/components/PWARegister";
+import GridBackground from "@/components/GridBackground";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.alfitofebriansyah.blog"),
@@ -195,17 +196,7 @@ export default function RootLayout({
         />
       </head>
       <body className={GeistMono.variable}>
-        <div
-          className="fixed inset-0 z-0 pointer-events-none"
-          style={{
-            backgroundImage: `
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
-      `,
-            backgroundSize: "48px 48px",
-          }}
-          aria-hidden="true"
-        />
+        <GridBackground />
         <ThemeProvider>
           {children}
           <PWARegister />

@@ -418,7 +418,7 @@ function TechGroup({ group }: { group: (typeof techStack)[0] }) {
   const hiddenCount = group.items.length - PREVIEW_COUNT;
 
   return (
-    <div className="p-4 md:p-5" style={{ backgroundColor: "var(--bg-card)" }}>
+    <div className="p-4 md:p-5">
       <p
         className="text-[10px] uppercase tracking-widest mb-4"
         style={{ color: "var(--text-muted)" }}
@@ -602,10 +602,7 @@ function TechGroup({ group }: { group: (typeof techStack)[0] }) {
 
 export default function TechStack() {
   return (
-    <div
-      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-px"
-      style={{ backgroundColor: "var(--border)" }}
-    >
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-px">
       {techStack.map((group) => (
         <TechGroup key={group.category} group={group} />
       ))}

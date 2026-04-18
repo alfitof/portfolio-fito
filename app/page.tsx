@@ -141,8 +141,8 @@ const headingStyle = { color: "var(--text-secondary)" };
 export default function Home() {
   return (
     <main
-      className="min-h-screen font-mono"
-      style={{ backgroundColor: "var(--bg)", color: "var(--text-primary)" }}
+      className="min-h-screen font-mono relative z-10"
+      style={{ color: "var(--text-primary)" }}
     >
       <Navbar active="Home" />
 

@@ -9,7 +9,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/AnimateIn";
 export default function BlogPage() {
   return (
     <main
-      className="min-h-screen font-mono"
+      className="min-h-screen font-mono relative z-10"
       style={{ backgroundColor: "var(--bg)", color: "var(--text-primary)" }}
     >
       <Navbar active="Blog" />

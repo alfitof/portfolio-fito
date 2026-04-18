@@ -19,7 +19,7 @@ export default function PostPage({
 
   return (
     <main
-      className="min-h-screen font-mono"
+      className="min-h-screen font-mono relative z-10"
       style={{ backgroundColor: "var(--bg)", color: "var(--text-primary)" }}
     >
       <Navbar active="Blog" />
