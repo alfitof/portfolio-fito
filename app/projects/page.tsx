@@ -29,7 +29,7 @@ export default function ProjectsPage() {
   return (
     <main
       className="min-h-screen font-mono relative z-10"
-      style={{ backgroundColor: "var(--bg)", color: "var(--text-primary)" }}
+      style={{ color: "var(--text-primary)" }}
     >
       <Navbar active="Projects" />
 

@@ -20,7 +20,7 @@ export default function PostPage({
   return (
     <main
       className="min-h-screen font-mono relative z-10"
-      style={{ backgroundColor: "var(--bg)", color: "var(--text-primary)" }}
+      style={{ color: "var(--text-primary)" }}
     >
       <Navbar active="Blog" />
       <article className="max-w-5xl mx-auto px-6 pt-24 pb-20 md:pt-28">
