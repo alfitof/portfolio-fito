@@ -146,7 +146,6 @@ export default function Home() {
     >
       <Navbar active="Home" />
 
-      {/* Profile */}
       <section className={sectionClass} style={sectionStyle}>
         <div className="max-w-5xl mx-auto px-6 pt-24 pb-12 md:pt-28 md:pb-16">
           <PageEntrance>
@@ -234,7 +233,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tech Stack */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
           <FadeIn>
@@ -251,7 +249,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
           <FadeIn>
@@ -329,7 +326,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Education */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
           <FadeIn>
@@ -402,7 +398,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Posts */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
           <FadeIn>
@@ -411,7 +406,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
           <FadeIn>
@@ -420,7 +414,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
       <section className={sectionClass} style={sectionStyle}>
         <div className={innerClass}>
           <FadeIn>
@@ -429,7 +422,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <motion.footer
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

@@ -34,7 +34,6 @@ export default function ProjectsPage() {
       <Navbar active="Projects" />
 
       <div className="max-w-5xl mx-auto px-6 pt-24 pb-20 md:pt-28">
-        {/* Header */}
         <FadeIn>
           <div
             className="pb-8 mb-8"
@@ -62,7 +61,6 @@ export default function ProjectsPage() {
           </div>
         </FadeIn>
 
-        {/* Filter & Sort */}
         <FadeIn delay={0.05}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div className="flex items-center gap-2 flex-wrap">
@@ -118,7 +116,6 @@ export default function ProjectsPage() {
         </FadeIn>
 
         <div>
-          {/* Table header */}
           <FadeIn delay={0.08}>
             <div
               className="hidden md:grid grid-cols-12 gap-6 pb-3"
@@ -150,7 +147,6 @@ export default function ProjectsPage() {
             </div>
           </FadeIn>
 
-          {/* Rows */}
           <AnimatePresence mode="wait">
             <motion.div
               key={`${selectedYear}-${sortOrder}`}

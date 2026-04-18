@@ -427,7 +427,6 @@ function TechGroup({ group }: { group: (typeof techStack)[0] }) {
       </p>
 
       <div className="flex flex-col gap-3">
-        {/* Always visible items */}
         {group.items.slice(0, PREVIEW_COUNT).map((item) => {
           let iconEl = item.icon;
           if (item.name === "TestNG") {
@@ -493,7 +492,6 @@ function TechGroup({ group }: { group: (typeof techStack)[0] }) {
           );
         })}
 
-        {/* Expandable items */}
         <AnimatePresence initial={false}>
           {expanded && (
             <motion.div

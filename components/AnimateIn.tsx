@@ -3,7 +3,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-// Fade in saat scroll
 export function FadeIn({
   children,
   delay = 0,
@@ -29,7 +28,6 @@ export function FadeIn({
   );
 }
 
-// Staggered children
 export function StaggerContainer({
   children,
   className,
@@ -80,7 +78,6 @@ export function StaggerItem({
   );
 }
 
-// Page load entrance
 export function PageEntrance({
   children,
   className,

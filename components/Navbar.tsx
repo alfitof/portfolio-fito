@@ -22,7 +22,6 @@ export default function Navbar({ active }: { active?: string }) {
       style={{ borderColor: "var(--border)", backgroundColor: "var(--nav-bg)" }}
     >
       <div className="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
-        {/* Logo */}
         <Link
           href="/"
           className="text-xs tracking-widest uppercase transition-colors"
@@ -31,7 +30,6 @@ export default function Navbar({ active }: { active?: string }) {
           ~/portfolio & blogs
         </Link>
 
-        {/* Desktop links */}
         <div
           className="hidden md:flex items-center gap-6 text-xs"
           style={{ color: "var(--text-secondary)" }}
@@ -49,7 +47,7 @@ export default function Navbar({ active }: { active?: string }) {
               }}
             >
               {link.label}
-              {/* Active underline */}
+
               {active === link.label && (
                 <motion.span
                   layoutId="nav-underline"
@@ -77,7 +75,6 @@ export default function Navbar({ active }: { active?: string }) {
             GitHub
           </a>
 
-          {/* Theme toggle */}
           <motion.button
             onClick={toggle}
             className="transition-colors hover:opacity-100 flex items-center justify-center"
@@ -99,7 +96,6 @@ export default function Navbar({ active }: { active?: string }) {
           </motion.button>
         </div>
 
-        {/* Mobile buttons */}
         <div className="md:hidden flex items-center gap-3">
           <motion.button
             onClick={toggle}
@@ -153,7 +149,6 @@ export default function Navbar({ active }: { active?: string }) {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div

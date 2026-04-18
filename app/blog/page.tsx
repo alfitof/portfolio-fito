@@ -14,7 +14,6 @@ export default function BlogPage() {
     >
       <Navbar active="Blog" />
       <div className="max-w-5xl mx-auto px-6 pt-24 pb-20 md:pt-28">
-        {/* Header */}
         <FadeIn>
           <div
             className="pb-8 mb-10"
@@ -41,7 +40,6 @@ export default function BlogPage() {
           </div>
         </FadeIn>
 
-        {/* Post list */}
         <StaggerContainer>
           {posts.map((post, i) => (
             <StaggerItem key={i}>

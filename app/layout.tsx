@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import PWARegister from "@/components/PWARegister";
 import GridBackground from "@/components/GridBackground";
+import PageLoader from "@/components/PageLoader";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.alfitofebriansyah.blog"),
@@ -78,9 +79,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* DNS prefetch untuk resource eksternal */}
         <link rel="dns-prefetch" href="https://api.resend.com" />
-        {/* Favicon — Apple */}
+
         <link
           rel="apple-touch-icon"
           sizes="57x57"
@@ -127,7 +127,6 @@ export default function RootLayout({
           href="/apple-icon-180x180.png"
         />
 
-        {/* Favicon — Android & standard */}
         <link
           rel="icon"
           type="image/png"
@@ -153,13 +152,11 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
 
-        {/* Manifest & MS */}
         <link rel="manifest" href="/manifest.json" />
         <meta name="msapplication-TileColor" content="#0a0a0a" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#0a0a0a" />
 
-        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -197,6 +194,7 @@ export default function RootLayout({
       </head>
       <body className={GeistMono.variable}>
         <GridBackground />
+        <PageLoader />
         <ThemeProvider>
           {children}
           <PWARegister />

@@ -25,7 +25,6 @@ export async function GET() {
   try {
     const { access_token } = await getAccessToken();
 
-    // Try currently playing first
     const nowRes = await fetch(
       "https://api.spotify.com/v1/me/player/currently-playing",
       {
@@ -49,7 +48,6 @@ export async function GET() {
       }
     }
 
-    // Fallback: recently played
     const recentRes = await fetch(
       "https://api.spotify.com/v1/me/player/recently-played?limit=1",
       {

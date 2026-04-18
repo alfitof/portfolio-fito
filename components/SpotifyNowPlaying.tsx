@@ -36,7 +36,6 @@ export default function SpotifyNowPlaying() {
       className="flex items-center gap-2 group max-w-fit"
       title={data.isPlaying ? "Now Playing" : "Recently Played"}
     >
-      {/* Album art */}
       {data.albumImage ? (
         <div className="relative w-7 h-7 flex-shrink-0">
           <img
@@ -52,7 +51,6 @@ export default function SpotifyNowPlaying() {
         <Music2 className="w-3.5 h-3.5 text-zinc-600" />
       )}
 
-      {/* Text */}
       <div className="min-w-0">
         <p className="text-[10px] text-zinc-600 leading-none mb-0.5">
           {data.isPlaying ? "▶ now playing" : "recently played"}

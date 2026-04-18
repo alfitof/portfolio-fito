@@ -24,7 +24,6 @@ export default function PostPage({
     >
       <Navbar active="Blog" />
       <article className="max-w-5xl mx-auto px-6 pt-24 pb-20 md:pt-28">
-        {/* Back + read time */}
         <motion.div
           className="flex items-center justify-between mb-8"
           initial={{ opacity: 0, y: -8 }}
@@ -43,7 +42,6 @@ export default function PostPage({
           </span>
         </motion.div>
 
-        {/* Tags */}
         <motion.div
           className="flex items-center gap-1.5 mb-4 flex-wrap"
           initial={{ opacity: 0 }}
@@ -67,7 +65,6 @@ export default function PostPage({
           ))}
         </motion.div>
 
-        {/* Title */}
         <motion.h1
           className="text-xl md:text-2xl font-bold tracking-tight leading-tight mb-4"
           style={{ color: "var(--text-heading)" }}
@@ -78,7 +75,6 @@ export default function PostPage({
           {post.title}
         </motion.h1>
 
-        {/* Meta */}
         <motion.div
           className="flex items-center gap-3 text-[10px] pb-8 mb-10 flex-wrap"
           style={{
@@ -96,7 +92,6 @@ export default function PostPage({
           <span>Alfito Febriansyah</span>
         </motion.div>
 
-        {/* Content */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -125,7 +120,6 @@ export default function PostPage({
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
-        {/* Footer nav */}
         <motion.div
           className="mt-16 pt-8 flex justify-between text-xs"
           style={{

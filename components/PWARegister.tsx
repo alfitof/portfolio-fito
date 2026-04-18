@@ -5,7 +5,6 @@ import { posts } from "@/lib/posts";
 
 export default function PWARegister() {
   useEffect(() => {
-    // Register service worker
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
         .register("/sw.js")
@@ -15,8 +14,6 @@ export default function PWARegister() {
         .catch((err) => console.error("SW error:", err));
     }
 
-    // Pre-fetch semua halaman penting di background
-    // supaya masuk cache saat online
     const pagesToCache = [
       "/projects",
       "/blog",

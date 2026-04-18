@@ -77,7 +77,6 @@ export default function ContactForm() {
         className="grid grid-cols-1 md:grid-cols-5 gap-px"
         style={{ backgroundColor: "var(--border)" }}
       >
-        {/* Left */}
         <div
           className="md:col-span-2 p-5 md:p-6 flex flex-col gap-6"
           style={{ backgroundColor: "var(--bg-card)" }}
@@ -132,7 +131,6 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* Right */}
         <div
           className="md:col-span-3 p-5 md:p-6"
           style={{ backgroundColor: "var(--bg-card)" }}
