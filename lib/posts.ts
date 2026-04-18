@@ -14,7 +14,7 @@ export const posts: Post[] = [
     title: "8 Months as a QA Engineer at PT Bank CIMB Niaga: What I Learned",
     excerpt:
       "From manual testing to UI automation with UFT One — my experience ensuring quality for the One Statement project at one of Indonesia's largest banks.",
-    date: "Apr 18, 2025",
+    date: "Apr 18, 2026",
     readTime: "7 min read",
     tags: ["qa", "testing", "career"],
     content: `
