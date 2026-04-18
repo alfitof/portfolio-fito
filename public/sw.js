@@ -6,7 +6,7 @@ const PRECACHE_ASSETS = [
   "/projects",
   "/offline.html",
   "/manifest.json",
-  "/gallery/avatar-1.webp",
+  "/gallery/avatar-2.jpeg",
 ];
 
 async function precacheBlogPosts() {

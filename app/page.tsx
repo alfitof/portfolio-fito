@@ -158,7 +158,7 @@ export default function Home() {
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <img
-                  src="/gallery/avatar-1.webp"
+                  src="/gallery/avatar-2.jpeg"
                   alt="Alfito Febriansyah"
                   className="w-full h-full object-cover"
                   fetchPriority="high"
