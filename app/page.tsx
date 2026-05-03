@@ -46,8 +46,10 @@ const experiences = [
     location: "Jakarta Raya (Remote)",
     period: "Dec 2023 — Jan 2024",
     points: [
-      "Developed foundational product management skills, from problem definition and user research to solution ideation.",
-      "Completed a capstone project — 'Beruang', a digital wallet application — using low-code development techniques.",
+      "Selected as one of 600 participants from 24,000+ applicants for the My Digital Academy Batch 2 Program by PT Bank Mandiri.",
+      "Developed the BERUANG digital wallet application using OutSystems (low-code platform), contributing to end-to-end feature implementation, including interactive financial education modules aimed at improving saving behavior among Indonesia’s young generation.",
+      "Learned and applied product management fundamentals, including problem definition, user persona creation, and value proposition design.",
+      "Conducted product discovery and ideation processes, translating user needs into actionable features and validating concepts through structured thinking frameworks.",
     ],
   },
   {
