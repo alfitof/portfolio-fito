@@ -82,8 +82,10 @@ const experiences = [
     location: "Bandung, Jawa Barat",
     period: "May 2022 — Dec 2022",
     points: [
-      "Gained experience using front-end frameworks such as ReactJS and TailwindCSS.",
-      "Developed a strong understanding of front-end development principles and effective UX practices.",
+      "Architected and developed the ASE Laboratory company profile website using React.js and Tailwind CSS, implementing a scalable component-based architecture to showcase research, projects, and member profiles.",
+      "Built responsive and accessible UI with mobile-first design principles, ensuring consistent user experience across devices and screen sizes.",
+      "Applied modern frontend best practices, including clean code principles, modular design, and version control workflows (Git) for collaborative development.",
+      "Optimized frontend performance through code splitting, reusable components, and efficient rendering strategies to improve load time and maintainability.",
     ],
   },
 ];
