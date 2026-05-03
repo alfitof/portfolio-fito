@@ -70,9 +70,10 @@ const experiences = [
     location: "Bandung, Jawa Barat (Remote)",
     period: "Feb 2023 — Aug 2023",
     points: [
-      "Developed real-world projects using industry-standard tools and techniques.",
-      "Worked collaboratively with a team of developers, designers, and project managers.",
-      "Received feedback and guidance from experienced mentors to improve technical and soft skills.",
+      "Collaborated in a real-world development team to integrate HL7 FHIR standards into a Hospital Information System (SIMRS), enabling standardized, interoperable, and secure healthcare data exchange.",
+      "Developed and optimized frontend interfaces using modern JavaScript frameworks, ensuring high performance, responsiveness, and usability across clinical workflows.",
+      "Implemented and mapped HL7 FHIR resources (e.g., Patient, Observation, Encounter) to relational database schemas, ensuring accurate data transformation and compliance with interoperability standards.",
+      "Integrated RESTful APIs for FHIR-based services, handling data fetching, validation, and error handling to ensure reliable communication between systems.",
     ],
   },
   {
