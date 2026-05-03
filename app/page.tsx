@@ -35,9 +35,9 @@ const experiences = [
     location: "Tangerang, Banten",
     period: "Jan 2025 — May 2025",
     points: [
-      "Contributed to the development and maintenance of the USP website for Infinix products (Note, Smart, HOT, Accessories Series, XOS) using NuxtJS.",
-      "Developed features for KarmaServe, a dashboard automation builder powered by Next.js, Selenium, and internal APIs.",
-      "Developed the EKA Trailblazer dashboard for managing a localized Amazing Race event in Singapore, using Next.js and Python.",
+      "Architected and maintained the Infinix Unique Selling Point (USP) platform using Nuxt.js, delivering modular, scalable front-end architecture across multiple product lines (Note, Smart, HOT, Accessories, XOS) with optimized performance and consistency.",
+      "Designed and developed the KarmaServe automation dashboard using Next.js and Ant Design, integrating internal REST APIs and Selenium Grid to orchestrate automated workflows, enhance system reliability, and reduce manual intervention.",
+      "Engineered the EKA Trailblazer dashboard with Next.js, implementing real-time data handling and monitoring capabilities to support operational control of a localized Amazing Race-style event in Singapore.",
     ],
   },
   {
