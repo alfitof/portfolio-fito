@@ -58,9 +58,10 @@ const experiences = [
     location: "Bandung, Jawa Barat",
     period: "Jun 2023 — Aug 2023",
     points: [
-      "Built a Learning Management System from the ground up, overseeing both front-end and back-end development.",
-      "Created a detailed system design and database architecture to ensure seamless integration and scalability.",
-      "Optimized user experience through iterative testing, debugging, and user feedback incorporation.",
+      "Architected and developed a full-featured Learning Management System (LMS) using Next.js and Firebase, implementing dynamic course management, quiz engine, and real-time data synchronization with Firestore.",
+      "Engineered secure authentication and role-based access control (RBAC) using Firebase Auth, enabling differentiated access for students and administrators.",
+      "Built a responsive, SEO-optimized company profile website using modern front-end practices (SSR), ensuring high performance, accessibility, and cross-device consistency.",
+      "Optimized application performance through code splitting, lazy loading, and efficient state management, reducing load time and improving user experience.",
     ],
   },
   {
