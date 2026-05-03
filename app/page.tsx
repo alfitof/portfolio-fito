@@ -23,10 +23,10 @@ const experiences = [
     location: "Tangerang Selatan, Banten",
     period: "Aug 2025 — Current",
     points: [
-      "Conducted end-to-end and regression testing for the One Statement project, ensuring data accuracy by validating statement contents against IBM AS400 and ETP systems.",
-      "Performed System Integration Testing (SIT) and User Acceptance Testing (UAT) to ensure system functionality and business requirement alignment.",
-      "Developed and maintained 20+ UI automation test assets weekly using UFT One to improve testing efficiency and coverage.",
-      "Executed API testing using TestNG to validate service reliability, response accuracy, and integration stability.",
+      "Conducted end-to-end and regression testing for the One Statement project, ensuring data integrity by validating outputs against AS400 and ETP systems using SQL queries and data comparison techniques.",
+      "Performed System Integration Testing (SIT) and User Acceptance Testing (UAT), collaborating with cross-functional teams and utilizing tools like ALM for test case management and defect tracking.",
+      "Developed and maintained 20+ UI automation test scripts weekly using UFT One (VBScript), improving test coverage and accelerating regression cycles, integrated within CI/CD pipelines (Jenkins) for continuous testing.",
+      "Implemented API automation testing using TestNG with REST Assured to validate service reliability, response accuracy, and integration stability across services.",
     ],
   },
   {
