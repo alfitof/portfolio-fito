@@ -8,14 +8,14 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    name: "Droozle.co",
-    desc: "Streetwear store offering modern, edgy apparel with a focus on bold aesthetics and everyday comfort.",
-    tech: ["Nuxt.js", "Vue 3", "TypeScript", "Tailwind CSS"],
-    category: "Web",
-    year: "2026",
-    link: "https://droozle.alfitofebriansyah.blog/",
-  },
+  // {
+  //   name: "Droozle.co",
+  //   desc: "Streetwear store offering modern, edgy apparel with a focus on bold aesthetics and everyday comfort.",
+  //   tech: ["Nuxt.js", "Vue 3", "TypeScript", "Tailwind CSS"],
+  //   category: "Web",
+  //   year: "2026",
+  //   link: "https://droozle.alfitofebriansyah.blog/",
+  // },
   {
     name: "Book Your Cut",
     desc: "SaaS platform for managing barber bookings, schedules, and customer appointments.",
